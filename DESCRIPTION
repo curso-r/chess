@@ -27,3 +27,5 @@ Suggests:
     rsvg,
     png,
     graphics
+URL: https://github.com/clente/chess
+BugReports: https://github.com/clente/chess/issues
