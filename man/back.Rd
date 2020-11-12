@@ -2,18 +2,18 @@
 % Please edit documentation in R/game.R
 \name{back}
 \alias{back}
-\title{Advance in the game tree}
+\title{Go back in the game tree}
 \usage{
 back(game, steps = 1)
 }
 \arguments{
-\item{game}{A game}
+\item{game}{A game node}
 
 \item{steps}{How many steps (half-turns) to go back}
 }
 \value{
-A game
+A game node
 }
 \description{
-Advance in the game tree
+Go back in the game tree
 }

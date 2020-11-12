@@ -5,7 +5,7 @@
 #' @param ... Other arguments passed on to [reticulate::py_install()]
 #' @export
 install_chess <- function(method = "auto", conda = "auto", ...) {
-  reticulate::py_install("chess", method = method, conda = conda)
+  reticulate::py_install("chess", method = method, conda = conda, ...)
 }
 
 # Global reference to chess

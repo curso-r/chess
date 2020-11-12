@@ -4,10 +4,10 @@
 \alias{fen}
 \title{Get FEN representation of board}
 \usage{
-fen(board)
+fen(game)
 }
 \arguments{
-\item{board}{A board}
+\item{game}{A game node}
 }
 \value{
 A string

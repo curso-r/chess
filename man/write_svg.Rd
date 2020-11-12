@@ -2,15 +2,15 @@
 % Please edit documentation in R/plot.R
 \name{write_svg}
 \alias{write_svg}
-\title{Save a board as an SVG}
+\title{Save a game node as an SVG}
 \usage{
 write_svg(x, file)
 }
 \arguments{
-\item{x}{A board}
+\item{x}{A game node}
 
 \item{file}{File or connection to write to}
 }
 \description{
-Save a board as an SVG
+Save a game node as an SVG
 }

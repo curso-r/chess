@@ -2,16 +2,16 @@
 % Please edit documentation in R/game.R
 \name{variations}
 \alias{variations}
-\title{Get variations of a move}
+\title{Get all variations for next move}
 \usage{
 variations(game)
 }
 \arguments{
-\item{game}{A game}
+\item{game}{A game node}
 }
 \value{
-A list of games
+A list of games nodes
 }
 \description{
-Get variations of a move
+Get all variations for next move
 }

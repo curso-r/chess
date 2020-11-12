@@ -4,17 +4,17 @@
 \alias{move}
 \title{Move a piece on the board}
 \usage{
-move(board, move, notation = c("san", "uci", "xboard"))
+move(game, move, notation = c("san", "uci", "xboard"))
 }
 \arguments{
-\item{board}{A board}
+\item{game}{A game node}
 
 \item{move}{Description of a move}
 
 \item{notation}{Notation used for \code{move}}
 }
 \value{
-A board
+A game node
 }
 \description{
 Move a piece on the board

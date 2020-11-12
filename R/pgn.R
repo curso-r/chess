@@ -1,18 +1,18 @@
 
 #' Save a game as an PGN
-#' @param x A board
+#' @param x A game
 #' @param file File or connection to write to
 #' @export
-write_pgn <- function(x, file) {
+write_game <- function(x, file) {
   writeLines(as.character(chess$pgn$Game$from_board(x)), file)
   invisible(x)
 }
 
 #' Read a game from a PGN
 #' @param file File or connection to read from
-#' @return A board
+#' @return A game
 #' @export
-read_pgn <- function(file) {
+read_game <- function(file) {
 
   # Needs IO, but can't understand why
   io <- reticulate::import("io")

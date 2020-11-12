@@ -4,10 +4,10 @@
 \alias{is_checkmate}
 \title{Check board for checkmate}
 \usage{
-is_checkmate(board)
+is_checkmate(game)
 }
 \arguments{
-\item{board}{A board}
+\item{game}{A game node}
 }
 \value{
 A boolean
