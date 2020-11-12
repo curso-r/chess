@@ -24,7 +24,4 @@ read_pgn <- function(file) {
     reticulate::r_to_py() %>%
     io$StringIO() %>%
     chess$pgn$read_game()
-
-  # Return board
-  game$end()$board()
 }

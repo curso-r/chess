@@ -22,7 +22,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
     magrittr,
-    reticulate
+    reticulate,
+    stringr,
+    purrr,
+    cli
 Suggests:
     rsvg,
     png,
