@@ -7,8 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "clente@curso-r.com")
 Description: This is an opinionated wrapper around the python-chess package. It
-  allows the user to read and write PGN files as well as create and explore game
-    trees such as the ones seen in chess books.
+  allows users to read and write PGN files as well as create and explore game
+  trees such as the ones seen in chess books.
 License: GPL-3
 Config/reticulate:
   list(

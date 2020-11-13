@@ -26,7 +26,7 @@
 
 # #' Create a piece object
 # #' @param symbol Piece symbol (p, n, b, r, q, k, P, N, B, R, Q or K)
-# #' @param color Piece color (B or W) if can't gess from `symbol`'s case
+# #' @param color Piece color (B or W) if can't guess from `symbol`'s case
 # #' @return A piece
 # #' @export
 # piece <- function(symbol, color = NULL) {
