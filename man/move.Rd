@@ -2,21 +2,21 @@
 % Please edit documentation in R/move.R
 \name{move}
 \alias{move}
-\title{Create subtree of game with next move}
+\title{Make moves and create variations}
 \usage{
-move(game, moves, notation = c("san", "uci", "xboard"))
+move(game, ..., notation = c("san", "uci", "xboard"))
 }
 \arguments{
 \item{game}{A game node}
 
-\item{moves}{A list or vector of moves (each sublist will be converted to a
-variation the same way parentheses work for PGN)}
+\item{...}{Sequence of moves (lists are converted to a variation the same
+way parentheses work for PGN)}
 
-\item{notation}{Notation used for \code{moves}}
+\item{notation}{Notation used for moves}
 }
 \value{
 A game node
 }
 \description{
-Create subtree of game with next move
+Make moves and create variations
 }

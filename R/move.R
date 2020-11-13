@@ -1,39 +1,56 @@
 
-#' Create subtree of game with next move
+#' Make moves and create variations
 #' @param game A game node
-#' @param moves A list or vector of moves (each sublist will be converted to a
-#' variation the same way parentheses work for PGN)
-#' @param notation Notation used for `moves`
+#' @param ... Sequence of moves (lists are converted to a variation the same
+#' way parentheses work for PGN)
+#' @param notation Notation used for moves
 #' @return A game node
 #' @export
-move <- function(game, moves, notation = c("san", "uci", "xboard")) {
+move <- function(game, ..., notation = c("san", "uci", "xboard")) {
+  return(move_(game, list(...), notation))
+}
+
+#' Make moves and create variations
+#' @param game A game node
+#' @param moves List of moves (lists are converted to a variation the same
+#' way parentheses work for PGN)
+#' @param notation Notation used for moves
+#' @return A game node
+move_ <- function(game, moves, notation = c("san", "uci", "xboard")) {
 
   # Base case
   if (length(moves) == 0) return(game)
 
+  # Take first element
   move1 <- moves[[1]]
   moves <- moves[-1]
 
   # Make first move
   if (is.list(move1)) {
 
+    # Decide next step based on next subelement
     move11 <- move1[[1]]
     moves1 <- move1[-1]
 
-    game <- back(game)
+    # Branch and move
     sply <- game$ply()
     game <- line(game, move11, notation, TRUE)
-    game <- move(game, moves1, notation)
+    game <- move_(game, moves1, notation)
     eply <- game$ply()
 
-    game <- back(game, eply-sply)
+    # Go back to root of variation
+    game <- back(game, eply-sply+1)
     game <- variation(game, 1)
 
-    return(move(game, moves, notation))
   } else {
+
+    # Just play move
     game <- play(game, move1, notation)
-    return(move(game, moves, notation))
+
   }
+
+  # Recursion
+  return(move_(game, moves, notation))
 }
 
 #' Move a piece on the board
@@ -58,10 +75,12 @@ play <- function(game, moves, notation = c("san", "uci", "xboard")) {
       moves <- game$board()$parse_xboard(moves)
     }
 
+    # Add move to mainline
     return(game$add_main_variation(moves))
 
   } else {
 
+    # Add all moves to mainline
     return(purrr::reduce(moves, move, notation, .init = game))
 
   }
@@ -74,10 +93,13 @@ play <- function(game, moves, notation = c("san", "uci", "xboard")) {
 #' @param enter Follow new branch to the end? Works like `git checkout`
 #' @return A game node
 line <- function(game, moves, notation = c("san", "uci", "xboard"),
-                   enter = FALSE) {
+                 enter = FALSE) {
 
   # Get notation
   notation <- match.arg(notation)
+
+  # Must add variation to last move
+  game <- back(game)
 
   # Handle first move
   move1 <- moves[1]
@@ -100,9 +122,11 @@ line <- function(game, moves, notation = c("san", "uci", "xboard"),
     game <- play(game, moves, notation)
   }
 
+  # Go gack to root it enter == TRUE
   if (enter) {
     return(game)
   } else {
-    return(back(game, length(moves)+1))
+    game <- back(game, length(moves)+1)
+    return(variation(game, 1))
   }
 }
