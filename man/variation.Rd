@@ -2,18 +2,18 @@
 % Please edit documentation in R/game.R
 \name{variation}
 \alias{variation}
-\title{Follow variation of a move}
+\title{Follow variation of a move, playing its first move}
 \usage{
 variation(game, id = 1)
 }
 \arguments{
 \item{game}{A game node}
 
-\item{id}{Index of variation (1 is the mainline)}
+\item{id}{Index of variation (1 is the current branch)}
 }
 \value{
 A game node
 }
 \description{
-Follow variation of a move
+Follow variation of a move, playing its first move
 }

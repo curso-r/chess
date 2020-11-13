@@ -10,13 +10,41 @@ move(game, ..., notation = c("san", "uci", "xboard"))
 \item{game}{A game node}
 
 \item{...}{Sequence of moves (lists are converted to a variation the same
-way parentheses work for PGN)}
+way parentheses work in PGN)}
 
-\item{notation}{Notation used for moves}
+\item{notation}{Notation used for moves (san, uci, or xboard)}
 }
 \value{
 A game node
 }
 \description{
-Make moves and create variations
+Adding moves to a game works roughly in the same way as PGN.
+Strings are added as single moves, vectors of strings are added as a sequence
+of moves, and lists are added as variations (siblings) to the last move
+made. After adding moves, the game node returned corresponds to the last
+move of the mainline. See the examples for more information.
+}
+\examples{
+\dontrun{
+game() \%>\%
+  move("e4") \%>\%
+  move("e5") \%>\%
+  move(list("e6")) \%>\%
+  move(list("d5", "Bc4", "dxc4")) \%>\%
+  back() \%>\%
+  str()
+
+game() \%>\%
+  move("e4") \%>\%
+  move("e5") \%>\%
+  move(list("e6"), list("d5", "Bc4", "dxc4")) \%>\%
+  back() \%>\%
+  str()
+
+game() \%>\%
+  move("e4", "e5", list("e6"), list("d5", "Bc4", "dxc4")) \%>\%
+  back() \%>\%
+  str()
+}
+
 }

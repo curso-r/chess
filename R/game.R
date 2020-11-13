@@ -1,12 +1,26 @@
 
-#' Start a game
-#' @return A game node
+#' Create a new game
+#'
+#' @description A game is a tree with nodes, where each node represents the
+#' board after a move and each branch represents a variation of the game (not
+#' to be confused with a variant of chess). This tree mirrors the
+#' [PGN](https://en.wikipedia.org/wiki/Portable_Game_Notation) of the game.
+#'
+#' To explore a game, an object of this class supports [print()], [plot()],
+#' [str()], [fen()], and more.
+#'
+#' @examples
+#' \dontrun{
+#' print(game())
+#' }
+#'
+#' @return A game root node
 #' @export
 game <- function() {
-  chess$pgn$Game()
+  chess_pgn$Game()
 }
 
-#' Advance in the game tree
+#' Advance in the game tree, playing next move from current branch
 #' @param game A game node
 #' @param steps How many steps (half-turns) to advance
 #' @return A game node
@@ -18,7 +32,7 @@ forward <- function(game, steps = 1) {
   game
 }
 
-#' Go back in the game tree
+#' Go back in the game tree, reverting the last move from current branch
 #' @param game A game node
 #' @param steps How many steps (half-turns) to go back
 #' @return A game node
@@ -30,7 +44,7 @@ back <- function(game, steps = 1) {
   game
 }
 
-#' Get all variations for next move
+#' Get all variations for next move (the children of current node)
 #' @param game A game node
 #' @return A list of games nodes
 #' @export
@@ -41,11 +55,19 @@ variations <- function(game) {
   vars
 }
 
-#' Follow variation of a move
+#' Follow variation of a move, playing its first move
 #' @param game A game node
-#' @param id Index of variation (1 is the mainline)
+#' @param id Index of variation (1 is the current branch)
 #' @return A game node
 #' @export
 variation <- function(game, id = 1) {
   purrr::chuck(game$variations, id)
+}
+
+#' Get the root node of a game
+#' @param game A game node
+#' @return A game node
+#' @export
+root <- function(game) {
+  game$root()
 }

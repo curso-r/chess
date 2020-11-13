@@ -7,7 +7,7 @@
 write_game(x, file)
 }
 \arguments{
-\item{x}{A game}
+\item{x}{Any node of a game}
 
 \item{file}{File or connection to write to}
 }

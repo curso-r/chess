@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot.R
 \name{write_svg}
 \alias{write_svg}
-\title{Save a game node as an SVG}
+\title{Save an SVG with rendering of the board}
 \usage{
 write_svg(x, file)
 }
@@ -12,5 +12,5 @@ write_svg(x, file)
 \item{file}{File or connection to write to}
 }
 \description{
-Save a game node as an SVG
+Save an SVG with rendering of the board
 }

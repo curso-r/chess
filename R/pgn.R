@@ -1,16 +1,16 @@
 
 #' Save a game as an PGN
-#' @param x A game
+#' @param x Any node of a game
 #' @param file File or connection to write to
 #' @export
 write_game <- function(x, file) {
-  writeLines(as.character(chess$pgn$Game$from_board(x)), file)
+  writeLines(utils::capture.output(utils::str(root(x))), file)
   invisible(x)
 }
 
 #' Read a game from a PGN
 #' @param file File or connection to read from
-#' @return A game
+#' @return A game node
 #' @export
 read_game <- function(file) {
 
@@ -18,10 +18,10 @@ read_game <- function(file) {
   io <- reticulate::import("io")
 
   # Read game from file
-  game <- file %>%
+  file %>%
     readLines() %>%
     paste0(collapse = "\n") %>%
     reticulate::r_to_py() %>%
     io$StringIO() %>%
-    chess$pgn$read_game()
+    chess_pgn$read_game()
 }

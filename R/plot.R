@@ -1,5 +1,5 @@
 
-#' Plot game node
+#' Plot rendering of the board
 #' @param x A game node
 #' @param ... Not used
 #' @export
@@ -16,7 +16,7 @@ plot.chess.pgn.GameNode <- function(x, ...) {
 
   # Save as PNG
   x$board() %>%
-    chess$svg$board() %>%
+    chess_svg$board() %>%
     reticulate::py_str() %>%
     charToRaw() %>%
     rsvg::rsvg_png(file)
@@ -28,7 +28,7 @@ plot.chess.pgn.GameNode <- function(x, ...) {
   graphics::rasterImage(img, xleft=0, xright=1, ybottom=0, ytop=1)
 }
 
-#' Save a game node as an SVG
+#' Save an SVG with rendering of the board
 #' @param x A game node
 #' @param file File or connection to write to
 #' @export
@@ -40,7 +40,7 @@ write_svg <- function(x, file) {
   }
 
   x$board() %>%
-    chess$svg$board() %>%
+    chess_svg$board() %>%
     reticulate::py_str() %>%
     charToRaw() %>%
     rsvg::rsvg_png(file)

@@ -10,7 +10,7 @@ read_game(file)
 \item{file}{File or connection to read from}
 }
 \value{
-A game
+A game node
 }
 \description{
 Read a game from a PGN

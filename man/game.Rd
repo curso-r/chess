@@ -2,13 +2,25 @@
 % Please edit documentation in R/game.R
 \name{game}
 \alias{game}
-\title{Start a game}
+\title{Create a new game}
 \usage{
 game()
 }
 \value{
-A game node
+A game root node
 }
 \description{
-Start a game
+A game is a tree with nodes, where each node represents the
+board after a move and each branch represents a variation of the game (not
+to be confused with a variant of chess). This tree mirrors the
+\href{https://en.wikipedia.org/wiki/Portable_Game_Notation}{PGN} of the game.
+
+To explore a game, an object of this class supports \code{\link[=print]{print()}}, \code{\link[=plot]{plot()}},
+\code{\link[=str]{str()}}, \code{\link[=fen]{fen()}}, and more.
+}
+\examples{
+\dontrun{
+print(game())
+}
+
 }

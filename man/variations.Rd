@@ -2,7 +2,7 @@
 % Please edit documentation in R/game.R
 \name{variations}
 \alias{variations}
-\title{Get all variations for next move}
+\title{Get all variations for next move (the children of current node)}
 \usage{
 variations(game)
 }
@@ -13,5 +13,5 @@ variations(game)
 A list of games nodes
 }
 \description{
-Get all variations for next move
+Get all variations for next move (the children of current node)
 }

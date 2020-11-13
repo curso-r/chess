@@ -2,7 +2,7 @@
 % Please edit documentation in R/game.R
 \name{back}
 \alias{back}
-\title{Go back in the game tree}
+\title{Go back in the game tree, reverting the last move from current branch}
 \usage{
 back(game, steps = 1)
 }
@@ -15,5 +15,5 @@ back(game, steps = 1)
 A game node
 }
 \description{
-Go back in the game tree
+Go back in the game tree, reverting the last move from current branch
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/game.R
 \name{forward}
 \alias{forward}
-\title{Advance in the game tree}
+\title{Advance in the game tree, playing next move from current branch}
 \usage{
 forward(game, steps = 1)
 }
@@ -15,5 +15,5 @@ forward(game, steps = 1)
 A game node
 }
 \description{
-Advance in the game tree
+Advance in the game tree, playing next move from current branch
 }

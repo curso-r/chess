@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot.R
 \name{plot.chess.pgn.GameNode}
 \alias{plot.chess.pgn.GameNode}
-\title{Plot game node}
+\title{Plot rendering of the board}
 \usage{
 \method{plot}{chess.pgn.GameNode}(x, ...)
 }
@@ -12,5 +12,5 @@
 \item{...}{Not used}
 }
 \description{
-Plot game node
+Plot rendering of the board
 }
