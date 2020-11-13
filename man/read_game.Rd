@@ -4,10 +4,12 @@
 \alias{read_game}
 \title{Read a game from a PGN}
 \usage{
-read_game(file)
+read_game(file, n_max = Inf)
 }
 \arguments{
 \item{file}{File or connection to read from}
+
+\item{n_max}{Maximum number of games to read}
 }
 \value{
 A game node

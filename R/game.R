@@ -7,7 +7,7 @@
 #' [PGN](https://en.wikipedia.org/wiki/Portable_Game_Notation) of the game.
 #'
 #' To explore a game, an object of this class supports [print()], [plot()],
-#' [str()], [fen()], and more.
+#' [str()], [fen()], [pgn()] and more.
 #'
 #' @examples
 #' \dontrun{

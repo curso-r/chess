@@ -16,7 +16,7 @@ to be confused with a variant of chess). This tree mirrors the
 \href{https://en.wikipedia.org/wiki/Portable_Game_Notation}{PGN} of the game.
 
 To explore a game, an object of this class supports \code{\link[=print]{print()}}, \code{\link[=plot]{plot()}},
-\code{\link[=str]{str()}}, \code{\link[=fen]{fen()}}, and more.
+\code{\link[=str]{str()}}, \code{\link[=fen]{fen()}}, \code{\link[=pgn]{pgn()}} and more.
 }
 \examples{
 \dontrun{
