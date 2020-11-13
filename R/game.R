@@ -49,29 +49,3 @@ variations <- function(game) {
 variation <- function(game, id = 1) {
   purrr::chuck(game$variations, id)
 }
-
-#' Add next move as one branch of the tree
-#' @param game A game node
-#' @param move Description of a move
-#' @param notation Notation used for `move`
-#' @param enter Follow move into new branch? Works like `git checkout`
-#' @return A game node
-#' @export
-branch <- function(game, move, notation = c("san", "uci", "xboard"),
-                   enter = TRUE) {
-
-  # Get notation
-  notation <- match.arg(notation)
-
-  # Parse move in context
-  if (notation == "san") {
-    move <- game$board()$parse_san(move)
-  } else if (notation == "uci") {
-    move <- game$board()$parse_uci(move)
-  } else if (notation == "xboard") {
-    move <- game$board()$parse_xboard(move)
-  }
-
-  if (enter) return(game$add_variation(move))
-  else return(game$add_variation(move)$parent)
-}

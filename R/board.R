@@ -13,29 +13,6 @@
 #   chess$Board$empty()
 # }
 
-#' Move a piece on the board
-#' @param game A game node
-#' @param move Description of a move
-#' @param notation Notation used for `move`
-#' @return A game node
-#' @export
-move <- function(game, move, notation = c("san", "uci", "xboard")) {
-
-  # Get notation
-  notation <- match.arg(notation)
-
-  # Parse move in context
-  if (notation == "san") {
-    move <- game$board()$parse_san(move)
-  } else if (notation == "uci") {
-    move <- game$board()$parse_uci(move)
-  } else if (notation == "xboard") {
-    move <- game$board()$parse_xboard(move)
-  }
-
-  return(game$add_main_variation(move))
-}
-
 # #' Undo last move
 # #' @param board A board
 # #' @param steps How many moves (half-turns) to revert
