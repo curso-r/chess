@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/chess)](https://CRAN.R-project.org/package=chess)
+[![R build status](https://github.com/clente/chess/workflows/R-CMD-check/badge.svg)](https://github.com/clente/chess/actions)
 <!-- badges: end -->
 
 ## Overview
