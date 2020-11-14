@@ -1,5 +1,5 @@
 Package: chess
-Title: Read, write, create and explore chess PGNs as trees
+Title: Read, write, create and explore chess games as trees
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "C.",
@@ -29,8 +29,11 @@ Imports:
 Suggests:
     rsvg,
     png,
-    graphics
+    graphics,
+    knitr,
+    rmarkdown
 URL: https://github.com/clente/chess
 BugReports: https://github.com/clente/chess/issues
 Depends: 
     R (>= 2.10)
+VignetteBuilder: knitr
