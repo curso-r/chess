@@ -1,5 +1,5 @@
 Package: chess
-Title: Read, write, create and explore chess games as trees
+Title: Read, Write, Create And Explore Chess Games
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "C.",

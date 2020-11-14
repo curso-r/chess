@@ -552,7 +552,7 @@ to the start of each source file to most effectively state the exclusion of warr
 and each file should have at least the “copyright” line and a pointer to
 where the full notice is found.
 
-    Read, write, create and explore chess games as trees
+    Read, Write, Create And Explore Chess Games
     Copyright (C) 2020 C. Lente
 
     This program is free software: you can redistribute it and/or modify

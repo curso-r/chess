@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Read, write, create and explore chess games as trees • chess</title>
+<title>Read, Write, Create And Explore Chess Games • chess</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Read, write, create and explore chess games as trees">
+<script src="pkgdown.js"></script><meta property="og:title" content="Read, Write, Create And Explore Chess Games">
 <meta property="og:description" content="This is an opinionated wrapper around the python-chess package. It
   allows users to read and write PGN files as well as create and explore game
   trees such as the ones seen in chess books.">
@@ -87,7 +87,7 @@
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p><a href="https://github.com/clente/chess">chess</a> is an <em>opinionated</em> wrapper around <a href="https://github.com/niklasf/python-chess">python-chess</a>, an amazing library created by <a href="https://github.com/niklasf">Niklas Fiekas</a>. It allows users to read and write <a href="https://en.wikipedia.org/wiki/Portable_Game_Notation">PGN</a> files as well as create and explore game trees such as the ones seen in chess books.</p>
+<p><a href="https://github.com/clente/chess">chess</a> is an <em>opinionated</em> wrapper for R around <a href="https://github.com/niklasf/python-chess">python-chess</a>, an amazing library created by <a href="https://github.com/niklasf">Niklas Fiekas</a>. It allows users to read and write <a href="https://en.wikipedia.org/wiki/Portable_Game_Notation">PGN</a> files as well as create and explore game trees such as the ones seen in chess books.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -163,7 +163,7 @@
 <span class="co">#&gt; . . . P . N P .</span>
 <span class="co">#&gt; P P P . . P . P</span>
 <span class="co">#&gt; R N B Q K B . R</span></code></pre></div>
-<p>You can also create your own game with <code><a href="reference/game.html">game()</a></code> and add variations to it: the <code><a href="reference/move.html">move()</a></code> function adds moves as well as branches the tree of the game. Strings are converted to simple moves, while <code><a href="https://rdrr.io/r/base/list.html">list()</a></code>s behave exactly as parenthesis in PGN, creating a variation to the last move. Here you can see how to create a <a href="https://en.wikipedia.org/wiki/Scholar%27s_mate">Scholar’s mate</a> and some ways to avoid it:</p>
+<p>You can also create your own game with <code><a href="reference/game.html">game()</a></code> and add variations to it: the <code><a href="reference/move.html">move()</a></code> function adds moves as well as branches the tree of the game. Strings are converted to simple moves, while <code><a href="https://rdrr.io/r/base/list.html">list()</a></code>s behave exactly as parenthesis in PGN, creating a variation of the last move. Here you can see how to recreate a <a href="https://en.wikipedia.org/wiki/Scholar%27s_mate">Scholar’s mate</a> and some ways to avoid it:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Scholar's mate and some defenses</span>
 <span class="va">scholars_mate</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/game.html">game</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -209,18 +209,6 @@
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="fu"><a href="reference/back.html">back</a></span><span class="op">(</span><span class="va">scholars_mate</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; 2... Nc6 3. Qh5 Nf6 ( 3... g6 4. Qf3 Nf6 ) 4. Qxf7#</span>
 
-<span class="co"># See the PGN of the whole game</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="fu"><a href="reference/root.html">root</a></span><span class="op">(</span><span class="va">scholars_mate</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; [Event "?"]</span>
-<span class="co">#&gt; [Site "?"]</span>
-<span class="co">#&gt; [Date "????.??.??"]</span>
-<span class="co">#&gt; [Round "?"]</span>
-<span class="co">#&gt; [White "?"]</span>
-<span class="co">#&gt; [Black "?"]</span>
-<span class="co">#&gt; [Result "*"]</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; 1. e4 e5 ( 1... e6 ) ( 1... d5 ) 2. Bc4 Nc6 ( 2... Nf6 ) 3. Qh5 Nf6 ( 3... g6 4. Qf3 Nf6 ) 4. Qxf7# *</span>
-
 <span class="co"># Export the PGN after some move</span>
 <span class="fu"><a href="reference/pgn.html">pgn</a></span><span class="op">(</span><span class="fu"><a href="reference/back.html">back</a></span><span class="op">(</span><span class="va">scholars_mate</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; [1] "2... Nc6 3. Qh5 Nf6 ( 3... g6 4. Qf3 Nf6 ) 4. Qxf7#"</span>
@@ -229,10 +217,46 @@
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">scholars_mate</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
 </div>
+<div id="roadmap" class="section level2">
+<h2 class="hasAnchor">
+<a href="#roadmap" class="anchor"></a>Roadmap</h2>
+<ul class="task-list">
+<li>
+<input type="checkbox" disabled>
+Unit tests</li>
+<li>
+<input type="checkbox" disabled>
+Better plotting</li>
+<li>
+<input type="checkbox" disabled>
+CRAN</li>
+<li>
+<input type="checkbox" disabled>
+NAGs</li>
+<li>
+<input type="checkbox" disabled>
+Comments</li>
+<li>
+<input type="checkbox" disabled>
+Static boards (puzzles)</li>
+<li>
+<input type="checkbox" disabled>
+Start game from FEN</li>
+<li>
+<input type="checkbox" disabled>
+More status functions</li>
+<li>
+<input type="checkbox" disabled>
+Shiny?</li>
+<li>
+<input type="checkbox" disabled>
+Stockfish API?</li>
+</ul>
+</div>
 <div id="motivation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#motivation" class="anchor"></a>Motivation</h2>
-<p>python-chess served as the inspiration (and backbone) for <a href="https://github.com/clente/chess">chess</a>. While the original version broadly handles “move generation, move validation” (with powerful classes and object-oriented syntax), <a href="https://github.com/clente/chess">chess</a> focuses on making it easy to create and explore PGNs as trees.</p>
+<p>python-chess served as the inspiration (and backbone) for <a href="https://github.com/clente/chess">chess</a>. While the original version (and <a href="https://github.com/jbkunst/rchess"><code>{rchess}</code></a> for that matter) broadly handles “move generation, move validation” (with powerful classes and object-oriented syntax), <a href="https://github.com/clente/chess">chess</a> focuses on making it easy to create and explore PGNs as trees.</p>
 <p>By narrowing down the scope of the API, I believe the package becomes more intuitive to people who just want to quickly create shareable game analyses or easily explore other people’s games without having to resort to point and click software.</p>
 <p><a href="https://github.com/clente/chess">chess</a>’s first use was helping me study Bobby Fischer’s <em>My 60 Memorable Games</em>. After some very difficult <a href="data-raw/m60mg.R">parsing</a>, I was able to convert the whole book to PGN and <a href="https://lichess.org/study/4zOTO2ki">upload it to lichess</a>, but I still felt like the interface was too clumsy…</p>
 </div>
@@ -266,9 +290,9 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://github.com/clente/chess/actions"><img src="https://github.com/clente/chess/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 <li><a href="https://CRAN.R-project.org/package=chess"><img src="https://www.r-pkg.org/badges/version/chess" alt="CRAN status"></a></li>
-<li><a href="https://github.com/clente/chess/actions"><img src="https://github.com/clente/chess/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 </ul>
 </div>
 </div>

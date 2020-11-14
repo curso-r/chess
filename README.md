@@ -5,17 +5,17 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/clente/chess/workflows/R-CMD-check/badge.svg)](https://github.com/clente/chess/actions)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/chess)](https://CRAN.R-project.org/package=chess)
-[![R build
-status](https://github.com/clente/chess/workflows/R-CMD-check/badge.svg)](https://github.com/clente/chess/actions)
 <!-- badges: end -->
 
 ## Overview
 
-`{chess}` is an *opinionated* wrapper around
+`{chess}` is an *opinionated* wrapper for R around
 [python-chess](https://github.com/niklasf/python-chess), an amazing
 library created by [Niklas Fiekas](https://github.com/niklasf). It
 allows users to read and write
@@ -111,8 +111,8 @@ fischer_sherwin %>%
 You can also create your own game with `game()` and add variations to
 it: the `move()` function adds moves as well as branches the tree of the
 game. Strings are converted to simple moves, while `list()`s behave
-exactly as parenthesis in PGN, creating a variation to the last move.
-Here you can see how to create a [Scholar’s
+exactly as parenthesis in PGN, creating a variation of the last move.
+Here you can see how to recreate a [Scholar’s
 mate](https://en.wikipedia.org/wiki/Scholar%27s_mate) and some ways to
 avoid it:
 
@@ -167,18 +167,6 @@ fen(scholars_mate)
 str(back(scholars_mate, 3))
 #> 2... Nc6 3. Qh5 Nf6 ( 3... g6 4. Qf3 Nf6 ) 4. Qxf7#
 
-# See the PGN of the whole game
-str(root(scholars_mate))
-#> [Event "?"]
-#> [Site "?"]
-#> [Date "????.??.??"]
-#> [Round "?"]
-#> [White "?"]
-#> [Black "?"]
-#> [Result "*"]
-#> 
-#> 1. e4 e5 ( 1... e6 ) ( 1... d5 ) 2. Bc4 Nc6 ( 2... Nf6 ) 3. Qh5 Nf6 ( 3... g6 4. Qf3 Nf6 ) 4. Qxf7# *
-
 # Export the PGN after some move
 pgn(back(scholars_mate, 3))
 #> [1] "2... Nc6 3. Qh5 Nf6 ( 3... g6 4. Qf3 Nf6 ) 4. Qxf7#"
@@ -189,12 +177,27 @@ plot(scholars_mate)
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
+## Roadmap
+
+-   [ ] Unit tests
+-   [ ] Better plotting
+-   [ ] CRAN
+-   [ ] NAGs
+-   [ ] Comments
+-   [ ] Static boards (puzzles)
+-   [ ] Start game from FEN
+-   [ ] More status functions
+-   [ ] Shiny?
+-   [ ] Stockfish API?
+
 ## Motivation
 
 python-chess served as the inspiration (and backbone) for `{chess}`.
-While the original version broadly handles “move generation, move
-validation” (with powerful classes and object-oriented syntax),
-`{chess}` focuses on making it easy to create and explore PGNs as trees.
+While the original version (and
+[`{rchess}`](https://github.com/jbkunst/rchess) for that matter) broadly
+handles “move generation, move validation” (with powerful classes and
+object-oriented syntax), `{chess}` focuses on making it easy to create
+and explore PGNs as trees.
 
 By narrowing down the scope of the API, I believe the package becomes
 more intuitive to people who just want to quickly create shareable game
