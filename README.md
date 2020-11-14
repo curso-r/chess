@@ -182,10 +182,11 @@ plot(scholars_mate)
 -   [ ] Unit tests
 -   [ ] Better plotting
 -   [ ] CRAN
--   [ ] NAGs
--   [ ] Comments
+-   [x] NAGs
+-   [x] Comments
 -   [ ] Static boards (puzzles)
--   [ ] Start game from FEN
+-   [x] Start game from FEN
+-   [x] Headers
 -   [ ] More status functions
 -   [ ] Shiny?
 -   [ ] Stockfish API?

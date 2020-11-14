@@ -4,7 +4,12 @@
 \alias{game}
 \title{Create a new game}
 \usage{
-game()
+game(headers = NULL, fen = NULL)
+}
+\arguments{
+\item{headers}{A named list like \code{list("Header1" = "Value1", ...)}}
+
+\item{fen}{FEN representing the starting position of the board}
 }
 \value{
 A game root node

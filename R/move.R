@@ -96,6 +96,16 @@ play <- function(game, moves, notation = c("san", "uci", "xboard")) {
   # Iterate over moves if necessary
   if (length(moves) == 1) {
 
+    # Extract comment
+    comment <- stringr::str_extract(moves, "(?<=\\{).+(?=\\})")
+    comment <- if (is.na(comment)) "" else stringr::str_squish(comment)
+    moves <- stringr::str_squish(stringr::str_remove(moves, "\\{.+\\}"))
+
+    # Extract NAG
+    nag <- glyph_to_nag(stringr::str_extract(moves, nag_regex))
+    nag <- if (is.null(nag)) list() else list(nag)
+    moves <- stringr::str_remove(moves, nag_regex)
+
     # Parse move in context
     if (notation == "san") {
       moves <- game$board()$parse_san(moves)
@@ -106,7 +116,7 @@ play <- function(game, moves, notation = c("san", "uci", "xboard")) {
     }
 
     # Add move to mainline
-    return(game$add_main_variation(moves))
+    return(game$add_main_variation(moves, comment = comment, nags = nag))
 
   } else {
 
@@ -135,6 +145,15 @@ line <- function(game, moves, notation = c("san", "uci", "xboard"),
   move1 <- moves[1]
   moves <- moves[-1]
 
+  comment <- stringr::str_extract(move1, "(?<=\\{).+(?=\\})")
+  comment <- if (is.na(comment)) "" else stringr::str_squish(comment)
+  move1 <- stringr::str_squish(stringr::str_remove(move1, "\\{.+\\}"))
+
+  # Extract NAG
+  nag <- glyph_to_nag(stringr::str_extract(move1, nag_regex))
+  nag <- if (is.null(nag)) list() else list(nag)
+  move1 <- stringr::str_remove(move1, nag_regex)
+
   # Parse move in context
   if (notation == "san") {
     move1 <- game$board()$parse_san(move1)
@@ -145,14 +164,14 @@ line <- function(game, moves, notation = c("san", "uci", "xboard"),
   }
 
   # Add branch
-  game <- game$add_variation(move1)
+  game <- game$add_variation(move1, comment = comment, nags = nag)
 
   # Make other moves
   if (length(moves) > 0) {
     game <- play(game, moves, notation)
   }
 
-  # Go gack to root it enter == TRUE
+  # Go back to root it enter == TRUE
   if (enter) {
     return(game)
   } else {

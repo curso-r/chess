@@ -9,6 +9,9 @@
 #' To explore a game, an object of this class supports [print()], [plot()],
 #' [str()], [fen()], [pgn()] and more.
 #'
+#' @param headers A named list like `list("Header1" = "Value1", ...)`
+#' @param fen FEN representing the starting position of the board
+#'
 #' @examples
 #' \dontrun{
 #' print(game())
@@ -16,8 +19,13 @@
 #'
 #' @return A game root node
 #' @export
-game <- function() {
-  chess_pgn$Game()
+game <- function(headers = NULL, fen = NULL) {
+  x <- chess_pgn$Game(headers = headers)
+  if (!is.null(fen)) {
+    x$setup(fen)
+  }
+
+  return(x)
 }
 
 #' Advance in the game tree, playing next move from current branch
