@@ -22,10 +22,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: windows-latest, r: 'release'}
-          - {os: macOS-latest, r: 'release'}
           - {os: ubuntu-20.04, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
-          - {os: ubuntu-20.04, r: 'devel', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -69,16 +66,11 @@ jobs:
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
-      - name: Install Miniconda
-        run: |
-          Rscript -e "remotes::install_github('rstudio/reticulate')"
-          Rscript -e "reticulate::install_miniconda()"
-
       - name: Install python-chess
         run: |
-          Rscript -e "reticulate::conda_create('r-reticulate', packages = c('python==3.8'))"
+          Rscript -e "reticulate::virtualenv_create('r-reticulate')"
           Rscript -e "remotes::install_local()"
-          Rscript -e "chess::install_chess()"
+          Rscript -e "reticulate::py_install('chess', python_version = "3.8", pip = TRUE)"
 
       - name: Check
         env:
