@@ -14,10 +14,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, echo=FALSE}
-reticulate::use_virtualenv("te", required = TRUE)
-```
-
 Making moves with `{chess}` is easier than it looks. It has a PGN-like syntax
 that facilitates interaction and translation, so using the package should not
 be a problem if you have ever seen moves written down in a chess book.

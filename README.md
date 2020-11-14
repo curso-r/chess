@@ -187,7 +187,7 @@ pgn(back(scholars_mate, 3))
 plot(scholars_mate)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ## Motivation
 

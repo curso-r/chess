@@ -52,10 +52,6 @@ To read an existing game, simply use `read_game()`. To explore it you can use
 `forward()`/`back()`, as well as `variations()`/`variation()` to see all
 variations listed for the next move and choose one of them.
 
-```{r, echo=FALSE}
-reticulate::use_virtualenv("te", required = TRUE)
-```
-
 ```{r}
 library(chess)
 
