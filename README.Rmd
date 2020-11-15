@@ -130,7 +130,7 @@ plot(scholars_mate)
 - [X] Start game from FEN
 - [X] Better plotting
 - [X] More status functions
-- [ ] Other OSs
+- [X] Other OSs
 - [ ] Unit tests
 - [ ] CRAN
 - [ ] Static boards (puzzles)
