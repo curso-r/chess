@@ -185,8 +185,8 @@ plot(scholars_mate)
 -   [x] Start game from FEN
 -   [x] Better plotting
 -   [x] More status functions
--   [ ] Unit tests
 -   [ ] Other OSs
+-   [ ] Unit tests
 -   [ ] CRAN
 -   [ ] Static boards (puzzles)
 -   [ ] Shiny?
