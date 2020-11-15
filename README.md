@@ -188,7 +188,7 @@ plot(scholars_mate)
 -   [x] Better plotting
 -   [x] More status functions
 -   [x] Other OSs
--   [ ] Unit tests
+-   [x] Unit tests
 -   [ ] CRAN
 -   [ ] Static boards (puzzles)
 -   [ ] Shiny?

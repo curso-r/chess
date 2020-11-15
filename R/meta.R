@@ -148,49 +148,49 @@ NULL
 
 #' @rdname board_move
 #' @export
-gives_check <- function(game, move, notation) {
+gives_check <- function(game, move, notation = c("san", "uci", "xboard")) {
   game$board()$gives_check(parse_move(game, move, notation))
 }
 
 #' @rdname board_move
 #' @export
-is_en_passant <- function(game, move, notation) {
+is_en_passant <- function(game, move, notation = c("san", "uci", "xboard")) {
   game$board()$is_en_passant(parse_move(game, move, notation))
 }
 
 #' @rdname board_move
 #' @export
-is_capture <- function(game, move, notation) {
+is_capture <- function(game, move, notation = c("san", "uci", "xboard")) {
   game$board()$is_capture(parse_move(game, move, notation))
 }
 
 #' @rdname board_move
 #' @export
-is_zeroing <- function(game, move, notation) {
+is_zeroing <- function(game, move, notation = c("san", "uci", "xboard")) {
   game$board()$is_zeroing(parse_move(game, move, notation))
 }
 
 #' @rdname board_move
 #' @export
-is_irreversible <- function(game, move, notation) {
+is_irreversible <- function(game, move, notation = c("san", "uci", "xboard")) {
   game$board()$is_irreversible(parse_move(game, move, notation))
 }
 
 #' @rdname board_move
 #' @export
-is_castling <- function(game, move, notation) {
+is_castling <- function(game, move, notation = c("san", "uci", "xboard")) {
   game$board()$is_castling(parse_move(game, move, notation))
 }
 
 #' @rdname board_move
 #' @export
-is_kingside_castling <- function(game, move, notation) {
+is_kingside_castling <- function(game, move, notation = c("san", "uci", "xboard")) {
   game$board()$is_kingside_castling(parse_move(game, move, notation))
 }
 
 #' @rdname board_move
 #' @export
-is_queenside_castling <- function(game, move, notation) {
+is_queenside_castling <- function(game, move, notation = c("san", "uci", "xboard")) {
   game$board()$is_queenside_castling(parse_move(game, move, notation))
 }
 
@@ -221,6 +221,6 @@ has_kingside_castling_rights <- function(game, color) {
 
 #' @rdname board_color
 #' @export
-has_kingside_castling_rights <- function(game, color) {
+has_queenside_castling_rights <- function(game, color) {
   game$board()$has_queenside_castling_rights(color)
 }

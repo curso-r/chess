@@ -5,6 +5,7 @@
 \alias{has_insufficient_material}
 \alias{has_castling_rights}
 \alias{has_kingside_castling_rights}
+\alias{has_queenside_castling_rights}
 \title{Get information about the current board given a color}
 \usage{
 has_insufficient_material(game, color)
@@ -13,7 +14,7 @@ has_castling_rights(game, color)
 
 has_kingside_castling_rights(game, color)
 
-has_kingside_castling_rights(game, color)
+has_queenside_castling_rights(game, color)
 }
 \arguments{
 \item{game}{A game node}

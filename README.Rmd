@@ -132,7 +132,7 @@ plot(scholars_mate)
 - [X] Better plotting
 - [X] More status functions
 - [X] Other OSs
-- [ ] Unit tests
+- [X] Unit tests
 - [ ] CRAN
 - [ ] Static boards (puzzles)
 - [ ] Shiny?

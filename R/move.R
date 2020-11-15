@@ -173,7 +173,8 @@ line <- function(game, moves, notation = c("san", "uci", "xboard"),
 #' @param moves A move string
 #' @param notation Notation used for `move`
 #' @return A move object
-parse_move <- function(game, moves, notation) {
+parse_move <- function(game, moves, notation = c("san", "uci", "xboard")) {
+  notation <- match.arg(notation)
   if (notation == "san") {
     moves <- game$board()$parse_san(moves)
   } else if (notation == "uci") {

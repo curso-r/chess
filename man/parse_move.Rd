@@ -4,7 +4,7 @@
 \alias{parse_move}
 \title{Parse move in context}
 \usage{
-parse_move(game, moves, notation)
+parse_move(game, moves, notation = c("san", "uci", "xboard"))
 }
 \arguments{
 \item{game}{A game node}

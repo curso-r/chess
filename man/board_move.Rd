@@ -12,21 +12,21 @@
 \alias{is_queenside_castling}
 \title{Get information about the current board given a move}
 \usage{
-gives_check(game, move, notation)
+gives_check(game, move, notation = c("san", "uci", "xboard"))
 
-is_en_passant(game, move, notation)
+is_en_passant(game, move, notation = c("san", "uci", "xboard"))
 
-is_capture(game, move, notation)
+is_capture(game, move, notation = c("san", "uci", "xboard"))
 
-is_zeroing(game, move, notation)
+is_zeroing(game, move, notation = c("san", "uci", "xboard"))
 
-is_irreversible(game, move, notation)
+is_irreversible(game, move, notation = c("san", "uci", "xboard"))
 
-is_castling(game, move, notation)
+is_castling(game, move, notation = c("san", "uci", "xboard"))
 
-is_kingside_castling(game, move, notation)
+is_kingside_castling(game, move, notation = c("san", "uci", "xboard"))
 
-is_queenside_castling(game, move, notation)
+is_queenside_castling(game, move, notation = c("san", "uci", "xboard"))
 }
 \arguments{
 \item{game}{A game node}
