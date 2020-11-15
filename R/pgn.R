@@ -23,7 +23,12 @@ read_game <- function(file, n_max = Inf) {
     readLines() %>%
     paste0(collapse = "\n")
 
-  n <- min(stringr::str_count(text, "\n\n\n")+1, n_max)
+
+  if (!grepl("\n\n\n", text)) {
+    n <- 1
+  } else {
+    n <- min(lengths(gregexpr("\n\n\n", text))+1, n_max)
+  }
 
   # Convert to readable PGN
   pgn <- text %>%

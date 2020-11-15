@@ -19,8 +19,7 @@ Imports:
     cli,
     magrittr,
     purrr,
-    reticulate,
-    stringr
+    reticulate
 Suggests:
     covr,
     graphics,

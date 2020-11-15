@@ -54,9 +54,10 @@ result <- function(game) {
 moves <- function(game) {
   game$board()$legal_moves %>%
     reticulate::py_str() %>%
-    stringr::str_extract("(?<=\\().+(?=\\))") %>%
-    stringr::str_split(", ") %>%
-    purrr::pluck(1)
+    sub(".*\\(", "", ., perl = TRUE) %>%
+    sub("\\).*", "", ., perl = TRUE) %>%
+    strsplit(", ") %>%
+    magrittr::extract2(1)
 }
 
 #' Get information about the current board

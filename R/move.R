@@ -97,14 +97,15 @@ play <- function(game, moves, notation = c("san", "uci", "xboard")) {
   if (length(moves) == 1) {
 
     # Extract comment
-    comment <- stringr::str_extract(moves, "(?<=\\{).+(?=\\})")
-    comment <- if (is.na(comment)) "" else stringr::str_squish(comment)
-    moves <- stringr::str_squish(stringr::str_remove(moves, "\\{.+\\}"))
+    comment <- sub("\\}.*", "", sub(".*\\{", "", moves, perl = TRUE), perl = TRUE)
+    comment <- if (comment == moves) "" else sub(" *$", "", sub("^ *", "", comment, perl = TRUE), perl = TRUE)
+    moves <- sub("\\{.+\\}", "", moves)
+    moves <- sub(" *$", "", sub("^ *", "", moves, perl = TRUE), perl = TRUE)
 
     # Extract NAG
-    nag <- glyph_to_nag(stringr::str_extract(moves, nag_regex))
+    nag <- glyph_to_nag(substring(moves, regexpr(nag_regex, moves)))
     nag <- if (is.null(nag)) list() else list(nag)
-    moves <- stringr::str_remove(moves, nag_regex)
+    moves <- sub(nag_regex, "", moves, perl = TRUE)
 
     # Parse move in context
     moves <- parse_move(game, moves, notation)
@@ -139,14 +140,16 @@ line <- function(game, moves, notation = c("san", "uci", "xboard"),
   move1 <- moves[1]
   moves <- moves[-1]
 
-  comment <- stringr::str_extract(move1, "(?<=\\{).+(?=\\})")
-  comment <- if (is.na(comment)) "" else stringr::str_squish(comment)
-  move1 <- stringr::str_squish(stringr::str_remove(move1, "\\{.+\\}"))
+  # Extract comment
+  comment <- sub("\\}.*", "", sub(".*\\{", "", move1, perl = TRUE), perl = TRUE)
+  comment <- if (comment == move1) "" else sub(" *$", "", sub("^ *", "", comment, perl = TRUE), perl = TRUE)
+  move1 <- sub("\\{.+\\}", "", move1)
+  move1 <- sub(" *$", "", sub("^ *", "", move1, perl = TRUE), perl = TRUE)
 
   # Extract NAG
-  nag <- glyph_to_nag(stringr::str_extract(move1, nag_regex))
+  nag <- glyph_to_nag(substring(move1, regexpr(nag_regex, move1)))
   nag <- if (is.null(nag)) list() else list(nag)
-  move1 <- stringr::str_remove(move1, nag_regex)
+  move1 <- sub(nag_regex, "", move1)
 
   # Parse move in context
   move1 <- parse_move(game, move1, notation)

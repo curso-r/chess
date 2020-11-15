@@ -20,11 +20,11 @@ print.chess.pgn.Variations <- function(x, unicode = FALSE, invert_color = FALSE,
   next_move = purrr::map_chr(vars, ~.x$san())
 
   # Print variation headers
-  stringr::str_c("<", turn, next_move, ">") %>%
-    stringr::str_pad(15, pad = " ") %>%
-    stringr::str_c(collapse = "    ") %>%
+  paste0("<", turn, next_move, ">") %>%
+    paste0(strrep(" ", 15-nchar(.)), .) %>%
+    paste0(collapse = "    ") %>%
     cli::col_grey() %>%
-    stringr::str_c("\n") %>%
+    paste0("\n") %>%
     cat()
 
   # Print variations
@@ -32,11 +32,11 @@ print.chess.pgn.Variations <- function(x, unicode = FALSE, invert_color = FALSE,
     purrr::map(~.x$board()) %>%
     purrr::map(board_to_string, unicode, invert_color, empty_square) %>%
     purrr::map(format, ...) %>%
-    purrr::map(stringr::str_split, "\n") %>%
-    purrr::map(purrr::pluck, 1) %>%
+    purrr::map(strsplit, "\n") %>%
+    purrr::map(magrittr::extract2, 1) %>%
     purrr::transpose() %>%
-    purrr::map_chr(stringr::str_c, collapse = "    ") %>%
-    stringr::str_c(collapse = "\n") %>%
+    purrr::map_chr(paste0, collapse = "    ") %>%
+    paste0(collapse = "\n") %>%
     cat()
 }
 
@@ -56,9 +56,9 @@ print.chess.pgn.GameNode <- function(x, unicode = FALSE, invert_color = FALSE,
 
     # Denote start of game
     "<Start>" %>%
-      stringr::str_pad(15, pad = " ") %>%
+      paste0(strrep(" ", 15-nchar(.)), .) %>%
       cli::col_grey() %>%
-      stringr::str_c("\n") %>%
+      paste0("\n") %>%
       cat()
 
     # Print initial board
@@ -71,9 +71,9 @@ print.chess.pgn.GameNode <- function(x, unicode = FALSE, invert_color = FALSE,
     turn = ifelse(!x$turn(), paste0(turn, ". "), paste0(turn, "... "))
 
     # Print header
-    stringr::str_c("<", turn, x$san(), ">") %>%
-      stringr::str_pad(15, pad = " ") %>%
-      stringr::str_c("\n") %>%
+    paste0("<", turn, x$san(), ">") %>%
+      paste0(strrep(" ", 15-nchar(.)), .) %>%
+      paste0("\n") %>%
       cli::col_grey() %>%
       cat()
 

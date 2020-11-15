@@ -133,6 +133,7 @@ plot(scholars_mate)
 - [X] More status functions
 - [X] Other OSs
 - [X] Unit tests
+- [ ] More vignettes
 - [ ] CRAN
 - [ ] Static boards (puzzles)
 - [ ] Shiny?

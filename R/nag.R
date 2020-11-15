@@ -1,6 +1,6 @@
 
 # Regex for finding NAGs
-nag_regex <- "[\\u2212\\-\\+\\u2213\\u21c6\\u2a01\\u2a71\\u2a00\\?\\!\\=\\u25a1\\u221e\\u00b1\\u2a72]+$"
+nag_regex <- "[\u2212\\-\\+\u2213\u21C6\u2A01\u2A71\u2A00\\?\\!\\=\u25A1\u221E\u00B1\u2A72]+$"
 
 #' Parse Numeric Annotation Glyph (NAG) of a move
 #' @param game A game node
@@ -9,7 +9,8 @@ nag_regex <- "[\\u2212\\-\\+\\u2213\\u21c6\\u2a01\\u2a71\\u2a00\\?\\!\\=\\u25a1\
 nag <- function(game) {
   id <- game$nags %>%
     reticulate::py_str() %>%
-    stringr::str_remove_all("[{}]") %>%
+    sub("[{]", "", .) %>%
+    sub("[}]", "", .) %>%
     as.numeric()
 
   # This is insane. switch() doesn't work with integers?
