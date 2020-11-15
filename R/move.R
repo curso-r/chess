@@ -10,7 +10,7 @@
 #' @param game A game node
 #' @param ... Sequence of moves (lists are converted to a variation the same
 #' way parentheses work in PGN)
-#' @param notation Notation used for moves (san, uci, or xboard)
+#' @param notation Notation used for `moves` (san, uci, or xboard)
 #'
 #' @examples
 #' \dontrun{
@@ -107,13 +107,7 @@ play <- function(game, moves, notation = c("san", "uci", "xboard")) {
     moves <- stringr::str_remove(moves, nag_regex)
 
     # Parse move in context
-    if (notation == "san") {
-      moves <- game$board()$parse_san(moves)
-    } else if (notation == "uci") {
-      moves <- game$board()$parse_uci(moves)
-    } else if (notation == "xboard") {
-      moves <- game$board()$parse_xboard(moves)
-    }
+    moves <- parse_move(game, moves, notation)
 
     # Add move to mainline
     return(game$add_main_variation(moves, comment = comment, nags = nag))
@@ -155,13 +149,7 @@ line <- function(game, moves, notation = c("san", "uci", "xboard"),
   move1 <- stringr::str_remove(move1, nag_regex)
 
   # Parse move in context
-  if (notation == "san") {
-    move1 <- game$board()$parse_san(move1)
-  } else if (notation == "uci") {
-    move1 <- game$board()$parse_uci(move1)
-  } else if (notation == "xboard") {
-    move1 <- game$board()$parse_xboard(move1)
-  }
+  move1 <- parse_move(game, move1, notation)
 
   # Add branch
   game <- game$add_variation(move1, comment = comment, nags = nag)
@@ -177,5 +165,20 @@ line <- function(game, moves, notation = c("san", "uci", "xboard"),
   } else {
     game <- back(game, length(moves)+1)
     return(variation(game, 1))
+  }
+}
+
+#' Parse move in context
+#' @param game A game node
+#' @param moves A move string
+#' @param notation Notation used for `move`
+#' @return A move object
+parse_move <- function(game, moves, notation) {
+  if (notation == "san") {
+    moves <- game$board()$parse_san(moves)
+  } else if (notation == "uci") {
+    moves <- game$board()$parse_uci(moves)
+  } else if (notation == "xboard") {
+    moves <- game$board()$parse_xboard(moves)
   }
 }

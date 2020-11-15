@@ -12,7 +12,7 @@ move(game, ..., notation = c("san", "uci", "xboard"))
 \item{...}{Sequence of moves (lists are converted to a variation the same
 way parentheses work in PGN)}
 
-\item{notation}{Notation used for moves (san, uci, or xboard)}
+\item{notation}{Notation used for \code{moves} (san, uci, or xboard)}
 }
 \value{
 A game node

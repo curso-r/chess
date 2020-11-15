@@ -23,9 +23,10 @@ plot.chess.pgn.GameNode <- function(x, ...) {
 
   # Show on Viewer
   img <- png::readPNG(file)
+  graphics::par(mar=c(0,0,0,0))
   graphics::plot.new()
-  graphics::plot.window(0:1, 0:1, asp = 1)
-  graphics::rasterImage(img, xleft=0, xright=1, ybottom=0, ytop=1)
+  graphics::plot.window(c(0, 10), c(0, 10), asp = 1)
+  graphics::rasterImage(img, xleft = 0, xright = 10, ybottom = 0, ytop = 10)
 }
 
 #' Save an SVG with rendering of the board

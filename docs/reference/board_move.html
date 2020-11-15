@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get FEN representation of board — fen • chess</title>
+<title>Get information about the current board given a move — board_move • chess</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Get FEN representation of board — fen" />
-<meta property="og:description" content="Get FEN representation of board" />
+<meta property="og:title" content="Get information about the current board given a move — board_move" />
+<meta property="og:description" content="Get information about the current board given a move" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,16 +119,30 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get FEN representation of board</h1>
+    <h1>Get information about the current board given a move</h1>
     <small class="dont-index">Source: <a href='https://github.com/clente/chess/blob/master/R/meta.R'><code>R/meta.R</code></a></small>
-    <div class="hidden name"><code>fen.Rd</code></div>
+    <div class="hidden name"><code>board_move.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get FEN representation of board</p>
+    <p>Get information about the current board given a move</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fen</span><span class='op'>(</span><span class='va'>game</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>gives_check</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>move</span>, <span class='va'>notation</span><span class='op'>)</span>
+
+<span class='fu'>is_en_passant</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>move</span>, <span class='va'>notation</span><span class='op'>)</span>
+
+<span class='fu'>is_capture</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>move</span>, <span class='va'>notation</span><span class='op'>)</span>
+
+<span class='fu'>is_zeroing</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>move</span>, <span class='va'>notation</span><span class='op'>)</span>
+
+<span class='fu'>is_irreversible</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>move</span>, <span class='va'>notation</span><span class='op'>)</span>
+
+<span class='fu'>is_castling</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>move</span>, <span class='va'>notation</span><span class='op'>)</span>
+
+<span class='fu'>is_kingside_castling</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>move</span>, <span class='va'>notation</span><span class='op'>)</span>
+
+<span class='fu'>is_queenside_castling</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>move</span>, <span class='va'>notation</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -137,11 +151,19 @@
       <th>game</th>
       <td><p>A game node</p></td>
     </tr>
+    <tr>
+      <th>move</th>
+      <td><p>Move to consider</p></td>
+    </tr>
+    <tr>
+      <th>notation</th>
+      <td><p>Notation used for <code>move</code></p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A string</p>
+    <p>A boolean</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

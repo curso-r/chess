@@ -29,19 +29,3 @@
 #
 #   tmp
 # }
-
-#' Check board for checkmate
-#' @param game A game node
-#' @return A boolean
-#' @export
-is_checkmate <- function(game) {
-  game$board()$is_checkmate()
-}
-
-#' Get FEN representation of board
-#' @param game A game node
-#' @return A string
-#' @export
-fen <- function(game) {
-  game$board()$fen()
-}

@@ -132,8 +132,8 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
+          <h2 id="section-game" class="hasAnchor"><a href="#section-game" class="anchor"></a>Game</h2>
+          <p class="section-desc"><p>Utilities for creating and navigating games</p></p>
         </th>
       </tr>
       
@@ -144,51 +144,9 @@
       <tr>
         
         <td>
-          <p><code><a href="back.html">back()</a></code> </p>
-        </td>
-        <td><p>Go back in the game tree, reverting the last move from current branch</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="board_to_string.html">board_to_string()</a></code> </p>
-        </td>
-        <td><p>Convert a board to either unicode or ASCII string</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fen.html">fen()</a></code> </p>
-        </td>
-        <td><p>Get FEN representation of board</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="forward.html">forward()</a></code> </p>
-        </td>
-        <td><p>Advance in the game tree, playing next move from current branch</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="game.html">game()</a></code> </p>
         </td>
         <td><p>Create a new game</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="install_chess.html">install_chess()</a></code> </p>
-        </td>
-        <td><p>Install python-chess</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="is_checkmate.html">is_checkmate()</a></code> </p>
-        </td>
-        <td><p>Check board for checkmate</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="line.html">line()</a></code> </p>
-        </td>
-        <td><p>Branch game with next move</p></td>
       </tr><tr>
         
         <td>
@@ -198,28 +156,109 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="move_.html">move_()</a></code> </p>
+          <p><code><a href="root.html">root()</a></code> </p>
         </td>
-        <td><p>Make moves and create variations</p></td>
+        <td><p>Get the root node of a game</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="forward.html">forward()</a></code> </p>
+        </td>
+        <td><p>Advance in the game tree, playing next move from current branch</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="back.html">back()</a></code> </p>
+        </td>
+        <td><p>Go back in the game tree, reverting the last move from current branch</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="variations.html">variations()</a></code> </p>
+        </td>
+        <td><p>Get all variations for next move (the children of current node)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="variation.html">variation()</a></code> </p>
+        </td>
+        <td><p>Follow variation of a move, playing its first move</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="pipe.html">`%&gt;%`</a></code> </p>
+        </td>
+        <td><p>Pipe operator</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-annotations" class="hasAnchor"><a href="#section-annotations" class="anchor"></a>Annotations</h2>
+          <p class="section-desc"><p>Utilities for adding and exporting game annotations</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="nag.html">nag()</a></code> </p>
+        </td>
+        <td><p>Parse Numeric Annotation Glyph (NAG) of a move</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="note.html">note()</a></code> </p>
+        </td>
+        <td><p>Get comment for a move</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-pgn" class="hasAnchor"><a href="#section-pgn" class="anchor"></a>PGN</h2>
+          <p class="section-desc"><p>Utilities for reading and writing games</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="read_game.html">read_game()</a></code> </p>
+        </td>
+        <td><p>Read a game from a PGN</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="write_game.html">write_game()</a></code> </p>
+        </td>
+        <td><p>Save a game as an PGN</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="pgn.html">pgn()</a></code> </p>
         </td>
         <td><p>Get PGN for node of a game</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="play.html">play()</a></code> </p>
-        </td>
-        <td><p>Move a piece on the board</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot.chess.pgn.GameNode.html">plot(<i>&lt;chess.pgn.GameNode&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Plot rendering of the board</p></td>
-      </tr><tr>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-printing-and-plotting" class="hasAnchor"><a href="#section-printing-and-plotting" class="anchor"></a>Printing and plotting</h2>
+          <p class="section-desc"><p>Utilities for printing and plotting</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
         
         <td>
           <p><code><a href="print.chess.Board.html">print(<i>&lt;chess.Board&gt;</i>)</a></code> </p>
@@ -240,39 +279,107 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="read_game.html">read_game()</a></code> </p>
+          <p><code><a href="plot.chess.pgn.GameNode.html">plot(<i>&lt;chess.pgn.GameNode&gt;</i>)</a></code> </p>
         </td>
-        <td><p>Read a game from a PGN</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="root.html">root()</a></code> </p>
-        </td>
-        <td><p>Get the root node of a game</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="variation.html">variation()</a></code> </p>
-        </td>
-        <td><p>Follow variation of a move, playing its first move</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="variations.html">variations()</a></code> </p>
-        </td>
-        <td><p>Get all variations for next move (the children of current node)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="write_game.html">write_game()</a></code> </p>
-        </td>
-        <td><p>Save a game as an PGN</p></td>
+        <td><p>Plot rendering of the board</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="write_svg.html">write_svg()</a></code> </p>
         </td>
         <td><p>Save an SVG with rendering of the board</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-python" class="hasAnchor"><a href="#section-python" class="anchor"></a>Python</h2>
+          <p class="section-desc"><p>Utilities for using Python</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="install_chess.html">install_chess()</a></code> </p>
+        </td>
+        <td><p>Install python-chess</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-meta" class="hasAnchor"><a href="#section-meta" class="anchor"></a>Meta</h2>
+          <p class="section-desc"><p>Utilities for getting information about the state of the game</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="fen.html">fen()</a></code> </p>
+        </td>
+        <td><p>Get FEN representation of board</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="turn.html">turn()</a></code> </p>
+        </td>
+        <td><p>Get whose turn it is</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="move_number.html">move_number()</a></code> </p>
+        </td>
+        <td><p>Get number of move</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ply_number.html">ply_number()</a></code> </p>
+        </td>
+        <td><p>Get number of ply</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="halfmove_clock.html">halfmove_clock()</a></code> </p>
+        </td>
+        <td><p>Get number of half-moves since the last capture or pawn move</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="result.html">result()</a></code> </p>
+        </td>
+        <td><p>Get result of the game ("*" if it hasn't ended)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="moves.html">moves()</a></code> </p>
+        </td>
+        <td><p>Get all legal moves available</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="board_is.html">is_checkmate()</a></code> <code><a href="board_is.html">is_check()</a></code> <code><a href="board_is.html">is_game_over()</a></code> <code><a href="board_is.html">is_stalemate()</a></code> <code><a href="board_is.html">is_insufficient_material()</a></code> <code><a href="board_is.html">is_seventyfive_moves()</a></code> <code><a href="board_is.html">is_fivefold_repetition()</a></code> <code><a href="board_is.html">is_repetition()</a></code> <code><a href="board_is.html">can_claim_draw()</a></code> <code><a href="board_is.html">can_claim_fifty_moves()</a></code> <code><a href="board_is.html">can_claim_threefold_repetition()</a></code> <code><a href="board_is.html">has_en_passant()</a></code> </p>
+        </td>
+        <td><p>Get information about the current board</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="board_move.html">gives_check()</a></code> <code><a href="board_move.html">is_en_passant()</a></code> <code><a href="board_move.html">is_capture()</a></code> <code><a href="board_move.html">is_zeroing()</a></code> <code><a href="board_move.html">is_irreversible()</a></code> <code><a href="board_move.html">is_castling()</a></code> <code><a href="board_move.html">is_kingside_castling()</a></code> <code><a href="board_move.html">is_queenside_castling()</a></code> </p>
+        </td>
+        <td><p>Get information about the current board given a move</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="board_color.html">has_insufficient_material()</a></code> <code><a href="board_color.html">has_castling_rights()</a></code> <code><a href="board_color.html">has_kingside_castling_rights()</a></code> <code><a href="board_color.html">has_kingside_castling_rights()</a></code> </p>
+        </td>
+        <td><p>Get information about the current board given a color</p></td>
       </tr>
     </tbody>
     </table>

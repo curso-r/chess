@@ -1,0 +1,46 @@
+reference:
+- title: Game
+  desc:  Utilities for creating and navigating games
+- contents:
+  - game
+  - move
+  - root
+  - forward
+  - back
+  - variations
+  - variation
+  - "%>%"
+- title: Annotations
+  desc:  Utilities for adding and exporting game annotations
+- contents:
+  - nag
+  - note
+- title: PGN
+  desc:  Utilities for reading and writing games
+- contents:
+  - read_game
+  - write_game
+  - pgn
+- title: Printing and plotting
+  desc:  Utilities for printing and plotting
+- contents:
+  - starts_with("print")
+  - plot.chess.pgn.GameNode
+  - write_svg
+- title: Python
+  desc:  Utilities for using Python
+- contents:
+  - install_chess
+- title: Meta
+  desc:  Utilities for getting information about the state of the game
+- contents:
+  - fen
+  - turn
+  - move_number
+  - ply_number
+  - halfmove_clock
+  - result
+  - moves
+  - "board_is"
+  - "board_move"
+  - "board_color"

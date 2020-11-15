@@ -179,15 +179,16 @@ plot(scholars_mate)
 
 ## Roadmap
 
--   [ ] Unit tests
--   [ ] Better plotting
--   [ ] CRAN
 -   [x] NAGs
 -   [x] Comments
--   [ ] Static boards (puzzles)
--   [x] Start game from FEN
 -   [x] Headers
--   [ ] More status functions
+-   [x] Start game from FEN
+-   [x] Better plotting
+-   [x] More status functions
+-   [ ] Unit tests
+-   [ ] Other OSs
+-   [ ] CRAN
+-   [ ] Static boards (puzzles)
 -   [ ] Shiny?
 -   [ ] Stockfish API?
 
