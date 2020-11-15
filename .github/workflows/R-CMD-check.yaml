@@ -81,6 +81,12 @@ jobs:
           Rscript -e "remotes::install_local()"
           Rscript -e "reticulate::py_install('chess', pip = TRUE)"
 
+      - name: Reinstall stringr
+        run: |
+          remove.packages("stringi", lib="~/R/x86_64-pc-linux-gnu-library/4.0")
+          remove.packages("stringr", lib="~/R/x86_64-pc-linux-gnu-library/4.0")
+          install.packages(c("stringi", "stringr"))
+
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
