@@ -11,6 +11,8 @@ status](https://github.com/clente/chess/workflows/R-CMD-check/badge.svg)](https:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/chess)](https://CRAN.R-project.org/package=chess)
+[![Codecov test
+coverage](https://codecov.io/gh/clente/chess/branch/master/graph/badge.svg)](https://codecov.io/gh/clente/chess?branch=master)
 <!-- badges: end -->
 
 ## Overview
@@ -211,3 +213,10 @@ Memorable Games*. After some very difficult [parsing](data-raw/m60mg.R),
 I was able to convert the whole book to PGN and [upload it to
 lichess](https://lichess.org/study/4zOTO2ki), but I still felt like the
 interface was too clumsy…
+
+## Code of Conduct
+
+Please note that the chess project is released with a [Contributor Code
+of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
