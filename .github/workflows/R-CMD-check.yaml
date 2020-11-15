@@ -83,8 +83,6 @@ jobs:
 
       - name: Reinstall stringr
         run: |
-          Rscript -e "remove.packages('stringi', lib='~/R/x86_64-pc-linux-gnu-library/4.0')"
-          Rscript -e "remove.packages('stringr', lib='~/R/x86_64-pc-linux-gnu-library/4.0')"
           Rscript -e "install.packages(c('stringi', 'stringr'))"
 
       - name: Check
