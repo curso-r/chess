@@ -27,11 +27,13 @@ Suggests:
     knitr,
     png,
     rmarkdown,
-    rsvg
+    rsvg,
+    testthat
 VignetteBuilder: 
     knitr
-Config/reticulate:list( packages = list( list(package =
+Config/reticulate: list( packages = list( list(package =
     "chess", pip = TRUE) ) )
+Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
