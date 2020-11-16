@@ -57,8 +57,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ config.matrix.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ config.matrix.os }}-${{ hashFiles('.github/R-version') }}-1-
+          key: ${{ matrix.config.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ matrix.config.os }}-${{ hashFiles('.github/R-version') }}-1-
 
       - name: Install system dependencies
         if: runner.os == 'Linux'
