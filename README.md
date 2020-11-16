@@ -179,22 +179,6 @@ plot(scholars_mate)
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
-## Roadmap
-
--   [x] NAGs
--   [x] Comments
--   [x] Headers
--   [x] Start game from FEN
--   [x] Better plotting
--   [x] More status functions
--   [x] Other OSs
--   [x] Unit tests
--   [x] Advanced usage
--   [ ] CRAN
--   [ ] Static boards (puzzles)
--   [ ] Shiny?
--   [ ] Stockfish API?
-
 ## Motivation
 
 python-chess served as the inspiration (and backbone) for `{chess}`.
@@ -215,9 +199,31 @@ I was able to convert the whole book to PGN and [upload it to
 lichess](https://lichess.org/study/4zOTO2ki), but I still felt like the
 interface was too clumsy…
 
+## Roadmap
+
+-   [x] NAGs
+-   [x] Comments
+-   [x] Headers
+-   [x] Start game from FEN
+-   [x] Better plotting
+-   [x] More status functions
+-   [x] Other OSs
+-   [x] Unit tests
+-   [x] Advanced usage
+-   [x] Styler
+-   [ ] CRAN
+-   [ ] Static boards (puzzles)
+-   [ ] Shiny?
+-   [ ] Stockfish API?
+
 ## Code of Conduct
 
 Please note that the chess project is released with a [Contributor Code
 of
 Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
+
+## License
+
+`{chess}` is licensed under the GPL 3 (or any later version at your
+option). Check out [LICENSE.md](LICENSE.md) for the full text.

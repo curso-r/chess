@@ -29,7 +29,7 @@ chapter_to_pgn <- function(file) {
   parse_mainline <- . %>%
     xml2::read_html() %>%
     xml2::xml_find_all("//tr") %>%
-    purrr::map(~list(
+    purrr::map(~ list(
       turn = xml2::xml_text(xml2::xml_find_first(.x, "td[1]")),
       w_piece = xml2::xml_attr(xml2::xml_find_first(.x, "td[2]//img"), "src"),
       w_move = xml2::xml_text(xml2::xml_find_first(.x, "td[2]")),
@@ -152,7 +152,7 @@ chapter_to_pgn <- function(file) {
     stringr::str_replace_all(piece_rx("queen"), "Q") %>%
     stringr::str_replace_all(piece_rx("king"), "K") %>%
     stringr::str_remove('^<p class="indent">') %>%
-    stringr::str_remove('</p>$') %>%
+    stringr::str_remove("</p>$") %>%
     stringr::str_replace_all("\u2026", " ... ") %>%
     stringr::str_remove_all("(<em>|</em>)") %>%
     stringr::str_remove_all("<a.*?</a>") %>%
@@ -163,7 +163,7 @@ chapter_to_pgn <- function(file) {
   file %>%
     xml2::read_html(encoding = "UTF-8") %>%
     xml2::xml_find_all("//table/tr|//p[@class='indent']") %>%
-    purrr::map_dfr(~dplyr::tibble(node = list(.x))) %>%
+    purrr::map_dfr(~ dplyr::tibble(node = list(.x))) %>%
     dplyr::rowwise() %>%
     dplyr::mutate(type = xml2::xml_attr(node, "class")) %>%
     dplyr::ungroup() %>%

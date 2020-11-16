@@ -49,7 +49,9 @@ move <- function(game, ..., notation = c("san", "uci", "xboard")) {
 move_ <- function(game, moves, notation = c("san", "uci", "xboard")) {
 
   # Base case
-  if (length(moves) == 0) return(game)
+  if (length(moves) == 0) {
+    return(game)
+  }
 
   # Take first element
   move1 <- moves[[1]]
@@ -69,14 +71,12 @@ move_ <- function(game, moves, notation = c("san", "uci", "xboard")) {
     eply <- game$ply()
 
     # Go back to root of variation
-    game <- back(game, eply-sply+1)
+    game <- back(game, eply - sply + 1)
     game <- variation(game, 1)
-
   } else {
 
     # Just play move
     game <- play(game, move1, notation)
-
   }
 
   # Recursion

@@ -20,8 +20,8 @@ test_that("meta functions work", {
   expect_equal(result(standard), "1-0")
   expect_equal(moves(root(standard)), c(
     "Nh3", "Nf3", "Nc3", "Na3", "h3", "g3", "f3", "e3", "d3", "c3", "b3", "a3",
-    "h4", "g4", "f4", "e4", "d4", "c4", "b4", "a4")
-  )
+    "h4", "g4", "f4", "e4", "d4", "c4", "b4", "a4"
+  ))
 
   # Is
   expect_true(is_checkmate(standard))

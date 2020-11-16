@@ -123,22 +123,6 @@ pgn(back(scholars_mate, 3))
 plot(scholars_mate)
 ```
 
-## Roadmap
-
-- [X] NAGs
-- [X] Comments
-- [X] Headers
-- [X] Start game from FEN
-- [X] Better plotting
-- [X] More status functions
-- [X] Other OSs
-- [X] Unit tests
-- [X] Advanced usage
-- [ ] CRAN
-- [ ] Static boards (puzzles)
-- [ ] Shiny?
-- [ ] Stockfish API?
-
 ## Motivation
 
 python-chess served as the inspiration (and backbone) for `{chess}`. While the
@@ -158,8 +142,30 @@ I was able to convert the whole book to PGN and
 [upload it to lichess](https://lichess.org/study/4zOTO2ki), but I still felt
 like the interface was too clumsy...
 
+## Roadmap
+
+- [X] NAGs
+- [X] Comments
+- [X] Headers
+- [X] Start game from FEN
+- [X] Better plotting
+- [X] More status functions
+- [X] Other OSs
+- [X] Unit tests
+- [X] Advanced usage
+- [X] Styler
+- [ ] CRAN
+- [ ] Static boards (puzzles)
+- [ ] Shiny?
+- [ ] Stockfish API?
+
 ## Code of Conduct
 
 Please note that the chess project is released with a
 [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
+
+## License
+
+`{chess}` is licensed under the GPL 3 (or any later version at your option).
+Check out [LICENSE.md](LICENSE.md) for the full text.

@@ -27,7 +27,7 @@ read_game <- function(file, n_max = Inf) {
   if (!grepl("\n\n\n", text)) {
     n <- 1
   } else {
-    n <- min(lengths(gregexpr("\n\n\n", text))+1, n_max)
+    n <- min(lengths(gregexpr("\n\n\n", text)) + 1, n_max)
   }
 
   # Convert to readable PGN
@@ -38,7 +38,7 @@ read_game <- function(file, n_max = Inf) {
   if (n == 1) {
     return(chess_pgn$read_game(pgn))
   } else if (n > 1) {
-    return(purrr::map(1:n, ~chess_pgn$read_game(pgn)))
+    return(purrr::map(1:n, ~ chess_pgn$read_game(pgn)))
   }
 }
 

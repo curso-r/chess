@@ -15,13 +15,13 @@ print.chess.pgn.Variations <- function(x, unicode = FALSE, invert_color = FALSE,
   x <- vars[[1]]
 
   # Get information about variations
-  turn = ifelse(!x$turn(), (x$ply()-1)/2, (x$ply()-2)/2)+1
-  turn = ifelse(!x$turn(), paste0(turn, ". "), paste0(turn, "... "))
-  next_move = purrr::map_chr(vars, ~.x$san())
+  turn <- ifelse(!x$turn(), (x$ply() - 1) / 2, (x$ply() - 2) / 2) + 1
+  turn <- ifelse(!x$turn(), paste0(turn, ". "), paste0(turn, "... "))
+  next_move <- purrr::map_chr(vars, ~ .x$san())
 
   # Print variation headers
   paste0("<", turn, next_move, ">") %>%
-    paste0(strrep(" ", 15-nchar(.)), .) %>%
+    paste0(strrep(" ", 15 - nchar(.)), .) %>%
     paste0(collapse = "    ") %>%
     cli::col_grey() %>%
     paste0("\n") %>%
@@ -29,7 +29,7 @@ print.chess.pgn.Variations <- function(x, unicode = FALSE, invert_color = FALSE,
 
   # Print variations
   vars %>%
-    purrr::map(~.x$board()) %>%
+    purrr::map(~ .x$board()) %>%
     purrr::map(board_to_string, unicode, invert_color, empty_square) %>%
     purrr::map(format, ...) %>%
     purrr::map(strsplit, "\n") %>%
@@ -56,23 +56,22 @@ print.chess.pgn.GameNode <- function(x, unicode = FALSE, invert_color = FALSE,
 
     # Denote start of game
     "<Start>" %>%
-      paste0(strrep(" ", 15-nchar(.)), .) %>%
+      paste0(strrep(" ", 15 - nchar(.)), .) %>%
       cli::col_grey() %>%
       paste0("\n") %>%
       cat()
 
     # Print initial board
     print.chess.Board(x$board(), unicode, invert_color, empty_square, ...)
-
   } else {
 
     # Get information about variations
-    turn = ifelse(!x$turn(), (x$ply()-1)/2, (x$ply()-2)/2)+1
-    turn = ifelse(!x$turn(), paste0(turn, ". "), paste0(turn, "... "))
+    turn <- ifelse(!x$turn(), (x$ply() - 1) / 2, (x$ply() - 2) / 2) + 1
+    turn <- ifelse(!x$turn(), paste0(turn, ". "), paste0(turn, "... "))
 
     # Print header
     paste0("<", turn, x$san(), ">") %>%
-      paste0(strrep(" ", 15-nchar(.)), .) %>%
+      paste0(strrep(" ", 15 - nchar(.)), .) %>%
       paste0("\n") %>%
       cli::col_grey() %>%
       cat()
