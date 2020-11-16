@@ -2,10 +2,10 @@
 #' Make moves and create variations
 #'
 #' @description Adding moves to a game works roughly in the same way as PGN.
-#' Strings are added as single moves, vectors of strings are added as a sequence
-#' of moves, and lists are added as variations (siblings) to the last move
-#' made. After adding moves, the game node returned corresponds to the last
-#' move of the mainline. See the examples for more information.
+#' Strings are added as single moves, and lists are added as variations
+#' (siblings) to the last move made. After adding moves, the game node returned
+#' corresponds to the last move of the mainline. See the examples for more
+#' information.
 #'
 #' @param game A game node
 #' @param ... Sequence of moves (lists are converted to a variation the same
@@ -64,7 +64,7 @@ move_ <- function(game, moves, notation = c("san", "uci", "xboard")) {
 
     # Branch and move
     sply <- game$ply()
-    game <- line(game, move11, notation, TRUE)
+    game <- line(game, move11, notation)
     game <- move_(game, moves1, notation)
     eply <- game$ply()
 
@@ -93,42 +93,30 @@ play <- function(game, moves, notation = c("san", "uci", "xboard")) {
   # Get notation
   notation <- match.arg(notation)
 
-  # Iterate over moves if necessary
-  if (length(moves) == 1) {
+  # Extract comment
+  comment <- sub("\\}.*", "", sub(".*\\{", "", moves, perl = TRUE), perl = TRUE)
+  comment <- if (comment == moves) "" else sub(" *$", "", sub("^ *", "", comment, perl = TRUE), perl = TRUE)
+  moves <- sub("\\{.+\\}", "", moves)
+  moves <- sub(" *$", "", sub("^ *", "", moves, perl = TRUE), perl = TRUE)
 
-    # Extract comment
-    comment <- sub("\\}.*", "", sub(".*\\{", "", moves, perl = TRUE), perl = TRUE)
-    comment <- if (comment == moves) "" else sub(" *$", "", sub("^ *", "", comment, perl = TRUE), perl = TRUE)
-    moves <- sub("\\{.+\\}", "", moves)
-    moves <- sub(" *$", "", sub("^ *", "", moves, perl = TRUE), perl = TRUE)
+  # Extract NAG
+  nag <- glyph_to_nag(substring(moves, regexpr(nag_regex, moves, perl = TRUE)))
+  nag <- if (is.null(nag)) list() else list(nag)
+  moves <- sub(nag_regex, "", moves, perl = TRUE)
 
-    # Extract NAG
-    nag <- glyph_to_nag(substring(moves, regexpr(nag_regex, moves)))
-    nag <- if (is.null(nag)) list() else list(nag)
-    moves <- sub(nag_regex, "", moves, perl = TRUE)
+  # Parse move in context
+  moves <- parse_move(game, moves, notation)
 
-    # Parse move in context
-    moves <- parse_move(game, moves, notation)
-
-    # Add move to mainline
-    return(game$add_main_variation(moves, comment = comment, nags = nag))
-
-  } else {
-
-    # Add all moves to mainline
-    return(purrr::reduce(moves, move, notation, .init = game))
-
-  }
+  # Add move to mainline
+  return(game$add_main_variation(moves, comment = comment, nags = nag))
 }
 
 #' Branch game with next move
 #' @param game A game node
 #' @param moves Vector of one or more description of moves
 #' @param notation Notation used for `moves`
-#' @param enter Follow new branch to the end? Works like `git checkout`
 #' @return A game node
-line <- function(game, moves, notation = c("san", "uci", "xboard"),
-                 enter = FALSE) {
+line <- function(game, moves, notation = c("san", "uci", "xboard")) {
 
   # Get notation
   notation <- match.arg(notation)
@@ -147,7 +135,7 @@ line <- function(game, moves, notation = c("san", "uci", "xboard"),
   move1 <- sub(" *$", "", sub("^ *", "", move1, perl = TRUE), perl = TRUE)
 
   # Extract NAG
-  nag <- glyph_to_nag(substring(move1, regexpr(nag_regex, move1)))
+  nag <- glyph_to_nag(substring(move1, regexpr(nag_regex, move1, perl = TRUE)))
   nag <- if (is.null(nag)) list() else list(nag)
   move1 <- sub(nag_regex, "", move1)
 
@@ -157,18 +145,7 @@ line <- function(game, moves, notation = c("san", "uci", "xboard"),
   # Add branch
   game <- game$add_variation(move1, comment = comment, nags = nag)
 
-  # Make other moves
-  if (length(moves) > 0) {
-    game <- play(game, moves, notation)
-  }
-
-  # Go back to root it enter == TRUE
-  if (enter) {
-    return(game)
-  } else {
-    game <- back(game, length(moves)+1)
-    return(variation(game, 1))
-  }
+  return(game)
 }
 
 #' Parse move in context

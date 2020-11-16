@@ -4,7 +4,7 @@
 \alias{line}
 \title{Branch game with next move}
 \usage{
-line(game, moves, notation = c("san", "uci", "xboard"), enter = FALSE)
+line(game, moves, notation = c("san", "uci", "xboard"))
 }
 \arguments{
 \item{game}{A game node}
@@ -12,8 +12,6 @@ line(game, moves, notation = c("san", "uci", "xboard"), enter = FALSE)
 \item{moves}{Vector of one or more description of moves}
 
 \item{notation}{Notation used for \code{moves}}
-
-\item{enter}{Follow new branch to the end? Works like \verb{git checkout}}
 }
 \value{
 A game node

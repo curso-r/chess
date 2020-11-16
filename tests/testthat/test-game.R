@@ -82,8 +82,7 @@ test_that("basic moves can be made", {
   # Remove checkmate
   expect_equal(
     game() %>%
-      move("e4") %>%
-      move("e5") %>%
+      move("e4", "e5", "f4", "exf4", "Bc4", "Qh4+", "Kf1", "b5", "Bxb5", "Nf6", "Nf3") %>%
       move("f4", "exf4", "Bc4", "Qh4+", "Kf1", "b5", "Bxb5", "Nf6", "Nf3") %>%
       move("Qh6", "d3", "Nh5", "Nh4", "Qg5", "Nf5", "c6", "g4", "Nf6", "Rg1", "cxb5") %>%
       move("h4", "Qg6", "h5", "Qg5", "Qf3", "Ng8", "Bxf4", "Qf6", "Nc3", "Bc5", "Nd5") %>%

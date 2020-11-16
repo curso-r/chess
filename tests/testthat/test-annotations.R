@@ -38,4 +38,27 @@ test_that("annotations work", {
       note(),
     "Wilhelm Steinitz suggested in 1879..."
   )
+
+  # Test every NAG
+  expect_equal(nag(move(game(), "e4\u2212+")), "-+")
+  expect_equal(nag(move(game(), "e4-+")), "-+")
+  expect_equal(nag(move(game(), "e4\u2213")), "\u2213")
+  expect_equal(nag(move(game(), "e4\u21c6")), "\u21c6")
+  expect_equal(nag(move(game(), "e4\u2a01")), "\u2a01")
+  expect_equal(nag(move(game(), "e4\u2a71")), "\u2a71")
+  expect_equal(nag(move(game(), "e4\u2a00")), "\u2a00")
+  expect_equal(nag(move(game(), "e4??")), "??")
+  expect_equal(nag(move(game(), "e4!!")), "!!")
+  expect_equal(nag(move(game(), "e4=")), "=")
+  expect_equal(nag(move(game(), "e4?!")), "?!")
+  expect_equal(nag(move(game(), "e4\u25a1")), "\u25a1")
+  expect_equal(nag(move(game(), "e4!")), "!")
+  expect_equal(nag(move(game(), "e4?")), "?")
+  expect_equal(nag(move(game(), "e4!?")), "!?")
+  expect_equal(nag(move(game(), "e4\u221e")), "\u221e")
+  expect_equal(nag(move(game(), "e4+\u2212")), "+-")
+  expect_equal(nag(move(game(), "e4+-")), "+-")
+  expect_equal(nag(move(game(), "e4+\u2212")), "+-")
+  expect_equal(nag(move(game(), "e4\u00b1")), "\u00b1")
+  expect_equal(nag(move(game(), "e4\u2a72")), "\u2a72")
 })

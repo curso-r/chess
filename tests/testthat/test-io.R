@@ -19,6 +19,10 @@ test_that("reading and writing PGN works", {
   # Reading
   expect_snapshot(read_game(tmp))
 
+  # Read a lot
+  file <- system.file("m60mg.pgn", package = "chess")
+  expect_equal(length(read_game(file)), 60)
+
   # SVG
   tmp <- tempfile(fileext = ".svg")
   write_svg(standard, tmp)
@@ -26,4 +30,11 @@ test_that("reading and writing PGN works", {
 
   # Str
   expect_snapshot(str(root(standard)))
+
+  # Plot
+  tmp <- tempfile(fileext = ".png")
+  png(filename = tmp)
+  plot(standard)
+  dev.off()
+  expect_snapshot_file(tmp, "immortal.png")
 })

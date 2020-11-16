@@ -2,6 +2,7 @@
 # Regex for finding NAGs
 nag_regex <- "[\u2212\\-\\+\u2213\u21C6\u2A01\u2A71\u2A00\\?\\!\\=\u25A1\u221E\u00B1\u2A72]+$"
 
+
 #' Parse Numeric Annotation Glyph (NAG) of a move
 #' @param game A game node
 #' @return A string
