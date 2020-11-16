@@ -1,5 +1,9 @@
 test_that("basic games can be created", {
 
+  # Skip if python-chess is not available
+  if (!reticulate::py_module_available("chess"))
+    skip("python-chess not available for testing")
+
   # Empty game
   expect_snapshot(game())
   expect_equal(pgn(game()), "[Event \"?\"]\n[Site \"?\"]\n[Date \"????.??.??\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"?\"]\n[Result \"*\"]\n\n*")

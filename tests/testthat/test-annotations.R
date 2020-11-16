@@ -1,5 +1,9 @@
 test_that("annotations work", {
 
+  # Skip if python-chess is not available
+  if (!reticulate::py_module_available("chess"))
+    skip("python-chess not available for testing")
+
   # Immortal game
   standard <- game() %>%
     move(
