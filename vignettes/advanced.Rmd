@@ -1,0 +1,61 @@
+---
+title: "Advanced usage"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{advanced}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+`{chess}` has some tools for advanced users. Most of them can be discovered
+through [documentation](https://clente.github.io/chess/reference/index.html).
+Here are a few highlights:
+
+```{r}
+library(chess)
+
+# Create a game with comments and NAGs
+anderssen_kieseritzky <- game() %>%
+  move(
+    "e4", "e5", "f4", "exf4", "Bc4", "Qh4", "Kf1", "b5", "Bxb5", "Nf6", "Nf3",
+    "Qh6", "d3", "Nh5", "Nh4", "Qg5", "Nf5", "c6", "g4", "Nf6", "Rg1", "cxb5",
+    "h4", "Qg6", "h5", "Qg5", "Qf3", "Ng8", "Bxf4", "Qf6", "Nc3", "Bc5", "Nd5",
+    "Qxb2", "Bd6", "Bxg1? {It is from this move that Black's defeat stems.}",
+    list("Qxa1 {Wilhelm Steinitz suggested in 1879...}", "Ke2", "Qb2", "Kd2", "Bxg1"),
+    "e5", "Qxa1", "Ke2", "Na6", "Nxg7", "Kd8", "Qf6", "Nxf6", "Be7"
+  )
+
+# NAG
+anderssen_kieseritzky %>%
+  root() %>%
+  forward(36) %>%
+  nag()
+
+# Comment
+anderssen_kieseritzky %>%
+  root() %>%
+  forward(36) %>%
+  note()
+
+# Some useful functions
+fen(anderssen_kieseritzky)
+turn(anderssen_kieseritzky) # White = TRUE and Black = FALSE
+move_number(anderssen_kieseritzky)
+ply_number(anderssen_kieseritzky)
+result(anderssen_kieseritzky)
+
+# Find all moves available
+moves(root(anderssen_kieseritzky))
+
+# Some verifiers
+is_checkmate(anderssen_kieseritzky)
+is_check(anderssen_kieseritzky)
+is_game_over(anderssen_kieseritzky)
+```

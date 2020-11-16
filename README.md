@@ -189,7 +189,7 @@ plot(scholars_mate)
 -   [x] More status functions
 -   [x] Other OSs
 -   [x] Unit tests
--   [ ] More vignettes
+-   [x] Advanced usage
 -   [ ] CRAN
 -   [ ] Static boards (puzzles)
 -   [ ] Shiny?
