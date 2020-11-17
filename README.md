@@ -194,7 +194,8 @@ analyses or easily explore other people’s games without having to resort
 to point and click software.
 
 `{chess}`’s first use was helping me study Bobby Fischer’s *My 60
-Memorable Games*. After some very difficult [parsing](data-raw/m60mg.R),
+Memorable Games*. After some very difficult
+[parsing](https://github.com/clente/chess/blob/master/data-raw/m60mg.R),
 I was able to convert the whole book to PGN and [upload it to
 lichess](https://lichess.org/study/4zOTO2ki), but I still felt like the
 interface was too clumsy…
@@ -226,4 +227,6 @@ By contributing to this project, you agree to abide by its terms.
 ## License
 
 `{chess}` is licensed under the GPL 3 (or any later version at your
-option). Check out [LICENSE.md](LICENSE.md) for the full text.
+option). Check out
+[LICENSE.md](https://github.com/clente/chess/blob/master/LICENSE.md) for
+the full text.
