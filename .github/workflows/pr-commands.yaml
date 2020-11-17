@@ -34,6 +34,7 @@ jobs:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      CHESS_TEST: 1
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/pr-fetch@v1
