@@ -1,8 +1,9 @@
 test_that("basic games can be created", {
 
   # Skip if python-chess is not available
-  if (!reticulate::py_module_available("chess"))
+  if (!reticulate::py_module_available("chess")) {
     skip("python-chess not available for testing")
+  }
 
   # Empty game
   expect_snapshot(game())
@@ -47,8 +48,9 @@ test_that("basic games can be created", {
 test_that("basic moves can be made", {
 
   # Skip if python-chess is not available
-  if (!reticulate::py_module_available("chess"))
+  if (!reticulate::py_module_available("chess")) {
     skip("python-chess not available for testing")
+  }
 
   # Immortal game
   standard <- game() %>%
@@ -104,8 +106,9 @@ test_that("basic moves can be made", {
 test_that("navigation works", {
 
   # Skip if python-chess is not available
-  if (!reticulate::py_module_available("chess"))
+  if (!reticulate::py_module_available("chess")) {
     skip("python-chess not available for testing")
+  }
 
   # Immortal game
   standard <- game() %>%
@@ -128,8 +131,9 @@ test_that("navigation works", {
 test_that("branching works", {
 
   # Skip if python-chess is not available
-  if (!reticulate::py_module_available("chess"))
+  if (!reticulate::py_module_available("chess")) {
     skip("python-chess not available for testing")
+  }
 
   # Immortal game
   standard <- game() %>%

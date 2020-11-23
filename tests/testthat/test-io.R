@@ -1,8 +1,9 @@
 test_that("reading and writing PGN works", {
 
   # Skip if python-chess is not available
-  if (!reticulate::py_module_available("chess"))
+  if (!reticulate::py_module_available("chess")) {
     skip("python-chess not available for testing")
+  }
 
   # Immortal game
   standard <- game() %>%

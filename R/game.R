@@ -14,7 +14,6 @@
 #'
 #' @examples
 #' print(game())
-#'
 #' @return A game root node
 #' @export
 game <- function(headers = NULL, fen = NULL) {
