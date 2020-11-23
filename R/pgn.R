@@ -36,9 +36,9 @@ read_game <- function(file, n_max = Inf) {
     io$StringIO()
 
   if (n == 1) {
-    return(chess_pgn$read_game(pgn))
+    return(chess_env$chess_pgn$read_game(pgn))
   } else if (n > 1) {
-    return(purrr::map(1:n, ~ chess_pgn$read_game(pgn)))
+    return(purrr::map(1:n, ~ chess_env$chess_pgn$read_game(pgn)))
   }
 }
 

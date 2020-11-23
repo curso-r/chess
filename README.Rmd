@@ -16,10 +16,10 @@ knitr::opts_chunk$set(
 # chess <a href='https://www.curso-r.com/'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
-[![R build status](https://github.com/clente/chess/workflows/R-CMD-check/badge.svg)](https://github.com/clente/chess/actions)
+[![R build status](https://github.com/curso-r/chess/workflows/R-CMD-check/badge.svg)](https://github.com/curso-r/chess/actions)
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![CRAN status](https://www.r-pkg.org/badges/version/chess)](https://CRAN.R-project.org/package=chess)
-[![Codecov test coverage](https://codecov.io/gh/clente/chess/branch/master/graph/badge.svg)](https://codecov.io/gh/clente/chess?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/curso-r/chess/branch/master/graph/badge.svg)](https://codecov.io/gh/curso-r/chess?branch=master)
 <!-- badges: end -->
 
 ## Overview
@@ -33,11 +33,11 @@ well as create and explore game trees such as the ones seen in chess books.
 ## Installation
 
 You can install the most recent version of `{chess}` from
-[GitHub](https://github.com/clente/chess) with:
+[GitHub](https://github.com/curso-r/chess) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("clente/chess")
+remotes::install_github("curso-r/chess")
 ```
 
 This should automatically install python-chess to your `{reticulate}`
@@ -138,7 +138,7 @@ software.
 
 `{chess}`'s first use was helping me study Bobby Fischer's
 _My 60 Memorable Games_. After some very difficult
-[parsing](https://github.com/clente/chess/blob/master/data-raw/m60mg.R),
+[parsing](https://github.com/curso-r/chess/blob/master/data-raw/m60mg.R),
 I was able to convert the whole book to PGN and
 [upload it to lichess](https://lichess.org/study/4zOTO2ki), but I still felt
 like the interface was too clumsy...
@@ -169,4 +169,4 @@ By contributing to this project, you agree to abide by its terms.
 ## License
 
 `{chess}` is licensed under the GPL 3 (or any later version at your option).
-Check out [LICENSE.md](https://github.com/clente/chess/blob/master/LICENSE.md) for the full text.
+Check out [LICENSE.md](https://github.com/curso-r/chess/blob/master/LICENSE.md) for the full text.

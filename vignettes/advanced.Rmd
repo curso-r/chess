@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 ```
 
 `{chess}` has some tools for advanced users. Most of them can be discovered
-through [documentation](https://clente.github.io/chess/reference/index.html).
+through [documentation](https://curso-r.github.io/chess/reference/index.html).
 Here are a few highlights:
 
 ```{r}

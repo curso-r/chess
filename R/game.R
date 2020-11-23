@@ -13,14 +13,12 @@
 #' @param fen FEN representing the starting position of the board
 #'
 #' @examples
-#' \dontrun{
 #' print(game())
-#' }
 #'
 #' @return A game root node
 #' @export
 game <- function(headers = NULL, fen = NULL) {
-  x <- chess_pgn$Game(headers = headers)
+  x <- chess_env$chess_pgn$Game(headers = headers)
   if (!is.null(fen)) {
     x$setup(fen)
   }

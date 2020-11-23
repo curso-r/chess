@@ -16,10 +16,14 @@ plot.chess.pgn.GameNode <- function(x, ...) {
 
   # Save as PNG
   x$board() %>%
-    chess_svg$board() %>%
+    chess_env$chess_svg$board() %>%
     reticulate::py_str() %>%
     charToRaw() %>%
     rsvg::rsvg_png(file)
+
+  # Restore old par on exit
+  oldpar <- graphics::par(no.readonly = TRUE)
+  on.exit(graphics::par(oldpar))
 
   # Show on Viewer
   img <- png::readPNG(file)
@@ -41,7 +45,7 @@ write_svg <- function(x, file) {
   }
 
   x$board() %>%
-    chess_svg$board() %>%
+    chess_env$chess_svg$board() %>%
     reticulate::py_str() %>%
     charToRaw() %>%
     rsvg::rsvg_png(file)

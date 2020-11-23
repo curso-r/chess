@@ -13,7 +13,6 @@
 #' @param notation Notation used for `moves` (san, uci, or xboard)
 #'
 #' @examples
-#' \dontrun{
 #' game() %>%
 #'   move("e4") %>%
 #'   move("e5") %>%
@@ -33,7 +32,6 @@
 #'   move("e4", "e5", list("e6"), list("d5", "Bc4", "dxc4")) %>%
 #'   back() %>%
 #'   str()
-#' }
 #'
 #' @return A game node
 #' @export
