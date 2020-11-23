@@ -25,6 +25,7 @@ corresponds to the last move of the mainline. See the examples for more
 information.
 }
 \examples{
+\donttest{
 game() \%>\%
   move("e4") \%>\%
   move("e5") \%>\%
@@ -44,5 +45,6 @@ game() \%>\%
   move("e4", "e5", list("e6"), list("d5", "Bc4", "dxc4")) \%>\%
   back() \%>\%
   str()
+}
 
 }
