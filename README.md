@@ -27,8 +27,13 @@ books.
 
 ## Installation
 
-You can install the most recent version of `{chess}` from
-[GitHub](https://github.com/curso-r/chess) with:
+Install the released version of `{chess}` from CRAN:
+
+``` r
+install.packages("chess")
+```
+
+Or install the development version from GitHub with:
 
 ``` r
 # install.packages("remotes")
