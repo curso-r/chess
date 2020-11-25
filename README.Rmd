@@ -17,9 +17,9 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R build status](https://github.com/curso-r/chess/workflows/R-CMD-check/badge.svg)](https://github.com/curso-r/chess/actions)
-[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![CRAN status](https://www.r-pkg.org/badges/version/chess)](https://CRAN.R-project.org/package=chess)
 [![Codecov test coverage](https://codecov.io/gh/curso-r/chess/branch/master/graph/badge.svg)](https://codecov.io/gh/curso-r/chess?branch=master)
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 <!-- badges: end -->
 
 ## Overview
@@ -160,7 +160,7 @@ like the interface was too clumsy...
 - [X] Unit tests
 - [X] Advanced usage
 - [X] Styler
-- [ ] CRAN
+- [X] CRAN
 - [ ] Static boards (puzzles)
 - [ ] Shiny?
 - [ ] Stockfish API?

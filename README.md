@@ -7,12 +7,12 @@
 
 [![R build
 status](https://github.com/curso-r/chess/workflows/R-CMD-check/badge.svg)](https://github.com/curso-r/chess/actions)
-[![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/chess)](https://CRAN.R-project.org/package=chess)
 [![Codecov test
 coverage](https://codecov.io/gh/curso-r/chess/branch/master/graph/badge.svg)](https://codecov.io/gh/curso-r/chess?branch=master)
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 <!-- badges: end -->
 
 ## Overview
@@ -217,7 +217,7 @@ interface was too clumsy…
 -   [x] Unit tests
 -   [x] Advanced usage
 -   [x] Styler
--   [ ] CRAN
+-   [x] CRAN
 -   [ ] Static boards (puzzles)
 -   [ ] Shiny?
 -   [ ] Stockfish API?
