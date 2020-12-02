@@ -14,5 +14,7 @@ install_chess(method = "auto", conda = "auto", ...)
 \item{...}{Other arguments passed on to \code{\link[reticulate:py_install]{reticulate::py_install()}}}
 }
 \description{
-Install python-chess
+Install the python library used as the backbone of this package. You can
+pass arguments on to \code{\link[reticulate:py_install]{reticulate::py_install()}}, but \code{python-chess} needs
+\code{python_version = "3.8"} and \code{pip = TRUE}.
 }
