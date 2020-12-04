@@ -57,12 +57,12 @@ see all variations listed for the next move and choose one of them.
 ``` r
 library(chess)
 
-# Read first game from My 60 Memorable Games
-file <- system.file("m60mg.pgn", package = "chess")
-fischer_sherwin <- read_game(file, n_max = 1)
+# Read final game from the Queen's Gambit
+file <- system.file("harmon.pgn", package = "chess")
+harmon_borgov <- read_game(file)
 
 # Starting position
-fischer_sherwin
+harmon_borgov
 #>         <Start>
 #> r n b q k b n r
 #> p p p p p p p p
@@ -73,46 +73,46 @@ fischer_sherwin
 #> P P P P P P P P
 #> R N B Q K B N R
 
-# Navigate to 4. g3
-fischer_sherwin %>%
-  forward(7)
-#>         <4. g3>
-#> r . b q k b n r
-#> p p . p . p p p
-#> . . n . p . . .
-#> . . p . . . . .
-#> . . . . P . . .
-#> . . . P . N P .
-#> P P P . . P . P
-#> R N B Q K B . R
+# Navigate to 2. c4
+harmon_borgov %>%
+  forward(3)
+#>         <2. c4>
+#> r n b q k b n r
+#> p p p . p p p p
+#> . . . . . . . .
+#> . . . p . . . .
+#> . . P P . . . .
+#> . . . . . . . .
+#> P P . . P P P P
+#> R N B Q K B N R
 
-# See all variations for 4...
-fischer_sherwin %>%
-  forward(7) %>%
+# See all variations for 2...
+harmon_borgov %>%
+  forward(3) %>%
   variations()
-#>      <4... Nf6>          <4... d5>
-#> r . b q k b . r    r . b q k b n r
-#> p p . p . p p p    p p . . . p p p
-#> . . n . p n . .    . . n . p . . .
-#> . . p . . . . .    . . p p . . . .
-#> . . . . P . . .    . . . . P . . .
-#> . . . P . N P .    . . . P . N P .
-#> P P P . . P . P    P P P . . P . P
-#> R N B Q K B . R    R N B Q K B . R
+#>       <2... e5>          <2... e6>
+#> r n b q k b n r    r n b q k b n r
+#> p p p . . p p p    p p p . . p p p
+#> . . . . . . . .    . . . . p . . .
+#> . . . p p . . .    . . . p . . . .
+#> . . P P . . . .    . . P P . . . .
+#> . . . . . . . .    . . . . . . . .
+#> P P . . P P P P    P P . . P P P P
+#> R N B Q K B N R    R N B Q K B N R
 
 # Follow the sideline
-fischer_sherwin %>%
-  forward(7) %>%
+harmon_borgov %>%
+  forward(3) %>%
   variation(2)
-#>       <4... d5>
-#> r . b q k b n r
-#> p p . . . p p p
-#> . . n . p . . .
-#> . . p p . . . .
-#> . . . . P . . .
-#> . . . P . N P .
-#> P P P . . P . P
-#> R N B Q K B . R
+#>       <2... e6>
+#> r n b q k b n r
+#> p p p . . p p p
+#> . . . . p . . .
+#> . . . p . . . .
+#> . . P P . . . .
+#> . . . . . . . .
+#> P P . . P P P P
+#> R N B Q K B N R
 ```
 
 You can also create your own game with `game()` and add variations to
@@ -182,7 +182,7 @@ pgn(back(scholars_mate, 3))
 plot(scholars_mate)
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="75%" style="display: block; margin: auto;" />
 
 ## Motivation
 

@@ -9,7 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "75%"
 )
 ```
 
@@ -61,25 +61,25 @@ variations listed for the next move and choose one of them.
 ```{r}
 library(chess)
 
-# Read first game from My 60 Memorable Games
-file <- system.file("m60mg.pgn", package = "chess")
-fischer_sherwin <- read_game(file, n_max = 1)
+# Read final game from the Queen's Gambit
+file <- system.file("harmon.pgn", package = "chess")
+harmon_borgov <- read_game(file)
 
 # Starting position
-fischer_sherwin
+harmon_borgov
 
-# Navigate to 4. g3
-fischer_sherwin %>%
-  forward(7)
+# Navigate to 2. c4
+harmon_borgov %>%
+  forward(3)
 
-# See all variations for 4...
-fischer_sherwin %>%
-  forward(7) %>%
+# See all variations for 2...
+harmon_borgov %>%
+  forward(3) %>%
   variations()
 
 # Follow the sideline
-fischer_sherwin %>%
-  forward(7) %>%
+harmon_borgov %>%
+  forward(3) %>%
   variation(2)
 ```
 
@@ -111,7 +111,7 @@ Note that there are many ways to structure the input to `move()`. See
 `{chess}` also features many ways of seeing both the game as a whole and the
 board at a specific point in time.
 
-```{r}
+```{r, fig.align='center'}
 # Print with unicode (doesn't look good on GitHub)
 print(scholars_mate, unicode = TRUE)
 
