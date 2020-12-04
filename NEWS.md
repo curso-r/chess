@@ -1,4 +1,4 @@
-# chess 1.0.0.9000
+# chess 1.0.1
 
 * Removed examples from documentation.
 * Added vignette about games included with the package.
