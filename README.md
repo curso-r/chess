@@ -218,9 +218,9 @@ interface was too clumsy…
 -   [x] Advanced usage
 -   [x] Styler
 -   [x] CRAN
+-   [ ] Stockfish API
 -   [ ] Static boards (puzzles)
 -   [ ] Shiny?
--   [ ] Stockfish API?
 
 ## Code of Conduct
 
