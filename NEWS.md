@@ -1,3 +1,5 @@
+# chess (development version)
+
 # chess 1.0.1
 
 * Removed examples from documentation.

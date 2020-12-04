@@ -1,6 +1,6 @@
 Package: chess
 Title: Read, Write, Create and Explore Chess Games
-Version: 1.0.1
+Version: 1.0.1.9000
 Authors@R: 
     person(given = "C.",
            family = "Lente",
