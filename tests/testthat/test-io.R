@@ -35,13 +35,6 @@ test_that("reading and writing PGN works", {
 
   # Str
   expect_snapshot(str(root(standard)))
-
-  # Plot
-  tmp <- tempfile(fileext = ".png")
-  png(filename = tmp)
-  plot(standard)
-  dev.off()
-  expect_snapshot_file(tmp, "immortal.png")
 })
 
 test_that("plotting works", {
