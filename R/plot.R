@@ -5,11 +5,6 @@
 #' @export
 plot.chess.pgn.GameNode <- function(x, ...) {
 
-  # Must have rsvg
-  if (!requireNamespace("rsvg", quietly = TRUE)) {
-    stop("Install the {rsvg} package")
-  }
-
   # Create a temp file
   file <- tempfile(fileext = ".png")
   on.exit(file.remove(file))
@@ -38,11 +33,6 @@ plot.chess.pgn.GameNode <- function(x, ...) {
 #' @param file File or connection to write to
 #' @export
 write_svg <- function(x, file) {
-
-  # Must have rsvg
-  if (!requireNamespace("rsvg", quietly = TRUE)) {
-    stop("Install the {rsvg} package")
-  }
 
   x$board() %>%
     chess_env$chess_svg$board() %>%

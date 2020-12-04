@@ -19,14 +19,14 @@ Imports:
     cli,
     magrittr,
     purrr,
-    reticulate
+    reticulate,
+    rsvg
 Suggests:
     covr,
     graphics,
     knitr,
     png,
     rmarkdown,
-    rsvg,
     testthat
 VignetteBuilder: 
     knitr
