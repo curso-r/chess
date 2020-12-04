@@ -84,7 +84,7 @@ jobs:
         run: |
           Rscript -e "reticulate::conda_create('r-reticulate', packages = c('python==3.8'))"
           Rscript -e "remotes::install_local()"
-          Rscript -e "reticulate::py_install('chess', pip = TRUE)"
+          Rscript -e "chess::install_chess()"
 
       - name: Check
         env:

@@ -12,7 +12,7 @@ name: test-coverage
 
 jobs:
   test-coverage:
-    runs-on: macOS-latest
+    runs-on: ubuntu-16.04
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       CHESS_TEST: 1
@@ -37,6 +37,14 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
+      - name: Install system dependencies
+        if: runner.os == 'Linux'
+        run: |
+          while read -r cmd
+          do
+            eval sudo $cmd
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "16.04"))')
+
       - name: Install dependencies
         run: |
           install.packages(c("remotes"))
@@ -54,7 +62,7 @@ jobs:
         run: |
           Rscript -e "reticulate::conda_create('r-reticulate', packages = c('python==3.8'))"
           Rscript -e "remotes::install_local()"
-          Rscript -e "reticulate::py_install('chess', pip = TRUE)"
+          Rscript -e "chess::install_chess()"
 
       - name: Test coverage
         run: covr::codecov()
