@@ -11,7 +11,8 @@
 #' @export
 install_chess <- function(method = "auto", conda = "auto", ...) {
   reticulate::py_install(
-    "chess", method = method, conda = conda,
+    "chess",
+    method = method, conda = conda,
     python_version = "3.8", pip = TRUE, ...
   )
 }

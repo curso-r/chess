@@ -33,7 +33,6 @@ plot.chess.pgn.GameNode <- function(x, ...) {
 #' @param file File or connection to write to
 #' @export
 write_svg <- function(x, file) {
-
   x$board() %>%
     chess_env$chess_svg$board() %>%
     reticulate::py_str() %>%
