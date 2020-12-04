@@ -1,3 +1,6 @@
+template:
+  params:
+    bootswatch: cosmo
 reference:
 - title: Game
   desc:  Utilities for creating and navigating games
