@@ -12,8 +12,11 @@ read_game(file, n_max = Inf)
 \item{n_max}{Maximum number of games to read}
 }
 \value{
-A game node
+A game node or list of game nodes
 }
 \description{
-Read a game from a PGN
+Read a \code{.pgn} file with one or more annotated games; if there is more than 1
+game in the file, a list is returned (which you can access with [\code{[[}()]).
+Some sample \code{.pgn} files are included in the package. See \code{vignette("games")}
+for more information.
 }

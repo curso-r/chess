@@ -9,9 +9,16 @@ write_game <- function(x, file) {
 }
 
 #' Read a game from a PGN
+#'
+#' Read a `.pgn` file with one or more annotated games; if there is more than 1
+#' game in the file, a list is returned (which you can access with [`[[`()]).
+#' Some sample `.pgn` files are included in the package. See `vignette("games")`
+#' for more information.
+#'
 #' @param file File or connection to read from
 #' @param n_max Maximum number of games to read
-#' @return A game node
+#'
+#' @return A game node or list of game nodes
 #' @export
 read_game <- function(file, n_max = Inf) {
 

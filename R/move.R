@@ -4,36 +4,13 @@
 #' @description Adding moves to a game works roughly in the same way as PGN.
 #' Strings are added as single moves, and lists are added as variations
 #' (siblings) to the last move made. After adding moves, the game node returned
-#' corresponds to the last move of the mainline. See the examples for more
-#' information.
+#' corresponds to the last move of the mainline. See `vignette("chess")` for
+#' more information.
 #'
 #' @param game A game node
 #' @param ... Sequence of moves (lists are converted to a variation the same
 #' way parentheses work in PGN)
 #' @param notation Notation used for `moves` (san, uci, or xboard)
-#'
-#' @examples
-#' \donttest{
-#' game() %>%
-#'   move("e4") %>%
-#'   move("e5") %>%
-#'   move(list("e6")) %>%
-#'   move(list("d5", "Bc4", "dxc4")) %>%
-#'   back() %>%
-#'   str()
-#'
-#' game() %>%
-#'   move("e4") %>%
-#'   move("e5") %>%
-#'   move(list("e6"), list("d5", "Bc4", "dxc4")) %>%
-#'   back() %>%
-#'   str()
-#'
-#' game() %>%
-#'   move("e4", "e5", list("e6"), list("d5", "Bc4", "dxc4")) %>%
-#'   back() %>%
-#'   str()
-#' }
 #'
 #' @return A game node
 #' @export

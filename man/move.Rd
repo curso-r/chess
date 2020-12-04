@@ -21,30 +21,6 @@ A game node
 Adding moves to a game works roughly in the same way as PGN.
 Strings are added as single moves, and lists are added as variations
 (siblings) to the last move made. After adding moves, the game node returned
-corresponds to the last move of the mainline. See the examples for more
-information.
-}
-\examples{
-\donttest{
-game() \%>\%
-  move("e4") \%>\%
-  move("e5") \%>\%
-  move(list("e6")) \%>\%
-  move(list("d5", "Bc4", "dxc4")) \%>\%
-  back() \%>\%
-  str()
-
-game() \%>\%
-  move("e4") \%>\%
-  move("e5") \%>\%
-  move(list("e6"), list("d5", "Bc4", "dxc4")) \%>\%
-  back() \%>\%
-  str()
-
-game() \%>\%
-  move("e4", "e5", list("e6"), list("d5", "Bc4", "dxc4")) \%>\%
-  back() \%>\%
-  str()
-}
-
+corresponds to the last move of the mainline. See \code{vignette("chess")} for
+more information.
 }

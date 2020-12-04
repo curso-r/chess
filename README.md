@@ -115,6 +115,10 @@ harmon_borgov %>%
 #> R N B Q K B N R
 ```
 
+Many other games are included with the package so you can get up and
+running as soon as you install `{chess}`! See `vignette("games")` for
+more information.
+
 You can also create your own game with `game()` and add variations to
 it: the `move()` function adds moves as well as branches the tree of the
 game. Strings are converted to simple moves, while `list()`s behave

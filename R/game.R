@@ -12,11 +12,6 @@
 #' @param headers A named list like `list("Header1" = "Value1", ...)`
 #' @param fen FEN representing the starting position of the board
 #'
-#' @examples
-#' \donttest{
-#' print(game())
-#' }
-#'
 #' @return A game root node
 #' @export
 game <- function(headers = NULL, fen = NULL) {

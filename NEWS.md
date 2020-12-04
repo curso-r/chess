@@ -1,5 +1,6 @@
 # chess 1.0.0.9000
 
+* Removed examples from documentation.
 * Added vignette about games included with the package.
 * Added Harmon vs. Borgov PGN.
 * `{rsvg}` is required.
