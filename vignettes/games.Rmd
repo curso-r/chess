@@ -1,0 +1,53 @@
+---
+title: "Included games"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{games}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = identical(Sys.getenv("CHESS_TEST", unset = "0"), "1")
+)
+```
+
+`{chess}` includes a total of 61 games so you can get up and running as soon as
+you install the package. To access them, use the `system.file()` function as
+below:
+
+```{r}
+library(chess)
+
+# Read final game from the Queen's Gambit
+file <- system.file("harmon.pgn", package = "chess")
+harmon_borgov <- read_game(file)
+
+# PGN for game
+str(harmon_borgov)
+```
+
+The example above loads the final game from the _Queen's Gambit_. The other 60
+games are sourced from _My 60 Memorable Games_, a classic book by Bobby Fischer,
+and are included in a single file. They can be loaded in the same way:
+
+```{r}
+# Read all games from My 60 Memorable Games
+file <- system.file("m60mg.pgn", package = "chess")
+m60mg <- read_game(file)
+
+# Check if it's a list of 60 games
+length(m60mg)
+```
+
+In cases where you have more than one game in a single file, you can either load
+them all and access them like in a list (see below) or use the `n_max` argument
+to read only a handful of them.
+
+```{r}
+# PGN for Fischer vs. Unzicker
+str(m60mg[[10]])
+```
