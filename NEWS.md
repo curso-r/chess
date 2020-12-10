@@ -1,5 +1,6 @@
 # chess (development version)
 
+* Added unit tests for Stockfish functions
 * Added function to have Stockfish play a move (`fish()`)
 * Added function to stop Stockfish API (`stockfish_kill()`)
 * Added function start Stockfish API (`stockfish_configure()`)
