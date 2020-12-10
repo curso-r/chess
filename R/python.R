@@ -43,4 +43,5 @@ chess_env <- new.env(parent = emptyenv())
 
   assign("chess_svg", reticulate::import("chess.svg", delay_load = TRUE), chess_env)
   assign("chess_pgn", reticulate::import("chess.pgn", delay_load = TRUE), chess_env)
+  assign("chess_engine", reticulate::import("chess.engine", delay_load = TRUE), chess_env)
 }
