@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - stockfish
   pull_request:
     branches:
       - main
