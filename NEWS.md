@@ -1,5 +1,7 @@
 # chess (development version)
 
+* Improved options for `install_chess()`
+
 # chess 1.0.1
 
 * Removed examples from documentation.

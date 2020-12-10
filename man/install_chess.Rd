@@ -4,14 +4,32 @@
 \alias{install_chess}
 \title{Install python-chess}
 \usage{
-install_chess(method = "auto", conda = "auto", ...)
+install_chess(
+  method = c("auto", "virtualenv", "conda"),
+  conda = "auto",
+  envname = NULL,
+  conda_python_version = "3.8",
+  ...
+)
 }
 \arguments{
-\item{method}{Installation method}
+\item{method}{Installation method (by default, "auto" automatically finds a
+method that will work in the local environment, but note that the
+"virtualenv" method is not available on Windows)}
 
-\item{conda}{The path to a conda executable}
+\item{conda}{Path to conda executable (or "auto" to find conda using the PATH
+and other conventional install locations)}
 
-\item{...}{Other arguments passed on to \code{\link[reticulate:py_install]{reticulate::py_install()}}}
+\item{envname}{Name of Python environment to install within}
+
+\item{conda_python_version}{the python version installed in the created conda
+environment (Python 3.8 is installed by default)}
+
+\item{...}{other arguments passed to \code{\link[reticulate:conda-tools]{reticulate::conda_install()}} or
+\code{\link[reticulate:virtualenv-tools]{reticulate::virtualenv_install()}}}
+}
+\value{
+\code{TRUE} if installation is successful
 }
 \description{
 Install the python library used as the backbone of this package. You can
