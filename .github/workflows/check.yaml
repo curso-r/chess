@@ -22,11 +22,11 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
-        r: ['devel', 'release']
+        os: [macos-latest, windows-latest, ubuntu-16.04]
+        r: ['release', 'oldrel']
         include:
           - os: ubuntu-16.04
-            r: '3.3'
+            r: 'devel'
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -67,7 +67,7 @@ jobs:
           reticulate::install_miniconda()
         shell: Rscript {0}
 
-      - name: Configure Miniconda
+      - name: Configure Miniconda on MacOS
         if: runner.os == 'macOS'
         run: echo "options(reticulate.conda_binary = reticulate:::miniconda_conda())" >> .Rprofile
 
@@ -87,3 +87,7 @@ jobs:
         with:
           name: ${{ runner.os }}-r${{ matrix.r }}-results
           path: check
+
+      - name: Fix path for Windows caching
+        if: runner.os == 'Windows'
+        run: echo "::add-path::C:/Program Files/Git/usr/bin"
