@@ -28,6 +28,11 @@ jobs:
           - os: ubuntu-16.04
             r: '3.3'
 
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+      _R_CHECK_CRAN_INCOMING_REMOTE_: false
+      CHESS_TEST: 1
+
     steps:
       - uses: actions/checkout@v2
 
@@ -73,9 +78,6 @@ jobs:
         shell: Rscript {0}
 
       - name: Check package
-        env:
-          _R_CHECK_CRAN_INCOMING_REMOTE_: false
-          CHESS_TEST: 1
         run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
         shell: Rscript {0}
 
