@@ -23,7 +23,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-16.04]
-        r: ['release', 'oldrel']
+        r: ['oldrel', 'release']
         include:
           - os: ubuntu-16.04
             r: 'devel'
