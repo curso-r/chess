@@ -15,16 +15,8 @@ test_that("stockfish integration works", {
       "Qh6", "d3", "Nh5", "Nh4", "Qg5", "Nf5", "c6", "g4", "Nf6", "Rg1", "cxb5"
     )
 
-  # Get path to executable
-  if (Sys.getenv("STOCKFISH_PATH") == "") {
-    exe <- stockfish_download()
-    expect_invisible(stockfish_download())
-  } else {
-    exe <- Sys.getenv("STOCKFISH_PATH")
-  }
-
   # Configure Stockfish
-  stockfish_configure(exe, list("Skill Level" = "0"))
+  stockfish_configure(options = list("Skill Level" = "0"))
   expect_message(stockfish_configure(exe, list("Skill Level" = "0")), "already")
 
   # Move with skill 0
@@ -33,7 +25,7 @@ test_that("stockfish integration works", {
 
   # Stop and reconfigure
   expect_invisible(stockfish_kill())
-  stockfish_configure(exe, options = list("Skill Level" = "20"))
+  stockfish_configure(options = list("Skill Level" = "20"))
 
   # Move with skill 20
   move2 <- fish(board, time = 1)$move$uci()

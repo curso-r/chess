@@ -6,7 +6,7 @@
 #'
 #' @return `TRUE` if startup is successful
 #' @export
-stockfish_configure <- function(path = Sys.getenv("STOCKFISH_PATH"), options = list()) {
+stockfish_configure <- function(path = system("which stockfish", TRUE), options = list()) {
 
   # Configure Stockfish only if necessary
   if (!is.null(chess_env$stockfish)) {
@@ -30,36 +30,36 @@ stockfish_kill <- function() {
   invisible(TRUE)
 }
 
-#' Download Stockfish executable according to platform
-#'
-#' @param path Path where to save executable
-#'
-#' @return Path to executable
-#' @export
-stockfish_download <- function(path = "~/.stockfish") {
-
-  # Create folder
-  dir.create(path, showWarnings = FALSE, recursive = TRUE)
-
-  # Get version requirements
-  url <- "https://stockfishchess.org/files/"
-  version <- switch (Sys.info()["sysname"],
-    "Linux" = "stockfish_12_linux_x64_bmi2.zip"
-  )
-
-  # Download and unzip
-  zipfile <- paste0(path, "/", version)
-  utils::download.file(paste0(url, version), zipfile)
-  utils::unzip(zipfile, exdir = path, overwrite = TRUE)
-  file.remove(zipfile)
-
-  # Let user know final path
-  exefile <- list.files(path, full.names = TRUE)
-  message("Add the following to your .Renviron:")
-  message('  STOCKFISH_PATH="', exefile, '"')
-
-  invisible(exefile)
-}
+# # Download Stockfish executable according to platform
+# #
+# # @param path Path where to save executable
+# #
+# # @return Path to executable
+# # @export
+# stockfish_download <- function(path = "~/.stockfish") {
+#
+#   # Create folder
+#   dir.create(path, showWarnings = FALSE, recursive = TRUE)
+#
+#   # Get version requirements
+#   url <- "https://stockfishchess.org/files/"
+#   version <- switch (Sys.info()["sysname"],
+#     "Linux" = "stockfish_12_linux_x64_bmi2.zip"
+#   )
+#
+#   # Download and unzip
+#   zipfile <- paste0(path, "/", version)
+#   utils::download.file(paste0(url, version), zipfile)
+#   utils::unzip(zipfile, exdir = path, overwrite = TRUE)
+#   file.remove(zipfile)
+#
+#   # Let user know final path
+#   exefile <- list.files(path, full.names = TRUE)
+#   message("Add the following to your .Renviron:")
+#   message('  STOCKFISH_PATH="', exefile, '"')
+#
+#   invisible(exefile)
+# }
 
 #' Have Stockfish play the next move
 #'

@@ -4,7 +4,7 @@
 \alias{stockfish_configure}
 \title{Configure and start Stockfish engine}
 \usage{
-stockfish_configure(path = Sys.getenv("STOCKFISH_PATH"), options = list())
+stockfish_configure(path = system("which stockfish", TRUE), options = list())
 }
 \arguments{
 \item{path}{Path to Stockfish executable}
