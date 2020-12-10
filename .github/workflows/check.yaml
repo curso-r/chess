@@ -16,9 +16,9 @@ on:
 # Run R-CMD-check in multiple platforms
 jobs:
   Check:
-    runs-on: ${{ matrix.config.os }}
+    runs-on: ${{ matrix.os }}
 
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+    name: ${{ matrix.os }} (${{ matrix.r }})
 
     strategy:
       matrix:
@@ -33,7 +33,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v1
         with:
-          r-version: ${{ matrix.config.r }}
+          r-version: ${{ matrix.r }}
 
       - uses: r-lib/actions/setup-pandoc@v1
 
@@ -41,8 +41,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-r-${{ matrix.config.r }}-lib-${{ github.sha }}
-          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-lib-
+          key: ${{ runner.os }}-r-${{ matrix.r }}-lib-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-r-${{ matrix.r }}-lib-
 
       - name: Install stockfish
         if: runner.os == 'Linux'
@@ -81,5 +81,5 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@main
         with:
-          name: ${{ runner.os }}-r${{ matrix.config.r }}-results
+          name: ${{ runner.os }}-r${{ matrix.r }}-results
           path: check
