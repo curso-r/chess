@@ -44,9 +44,11 @@ jobs:
           key: ${{ runner.os }}-r-${{ matrix.r }}-lib-${{ github.sha }}
           restore-keys: ${{ runner.os }}-r-${{ matrix.r }}-lib-
 
-      - name: Install stockfish
+      - name: Install Linux dependencies
         if: runner.os == 'Linux'
-        run: sudo apt-get install stockfish
+        run: |
+          sudo apt-get install librsvg2-dev libcurl4-openssl-dev libssl-dev libicu-dev
+          sudo apt-get install stockfish
 
       - name: Install dependencies
         run: |
