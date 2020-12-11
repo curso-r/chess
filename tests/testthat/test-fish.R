@@ -6,7 +6,7 @@ test_that("stockfish integration works", {
   }
 
   # Skip for now
-  skip()
+  skip("Ignore test while adding Stockfish src")
 
   # Create sample game
   board <- game() %>%
