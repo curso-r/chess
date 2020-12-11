@@ -55,7 +55,11 @@ jobs:
           sudo apt-get install librsvg2-dev libcurl4-openssl-dev libssl-dev libicu-dev
           sudo apt-get install stockfish
 
-      - name: Install dependencies
+      - name: Install MacOS dependencies
+        if: runner.os == 'macOS'
+        run: brew install stockfish
+
+      - name: Install R dependencies
         run: |
           install.packages(c('remotes', 'rcmdcheck'))
           remotes::install_deps(dependencies = TRUE)
@@ -87,7 +91,3 @@ jobs:
         with:
           name: ${{ runner.os }}-r${{ matrix.r }}-results
           path: check
-
-      - name: Fix path for Windows caching
-        if: runner.os == 'Windows'
-        run: echo "::add-path::C:/Program Files/Git/usr/bin"
