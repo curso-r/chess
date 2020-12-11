@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ ! -d "~/.R" ]; then
+  mkdir ~/.R; touch ~/.R/Makevars
+  echo "CXXFLAGS= -Wall -fno-exceptions -std=c++11  -pedantic -Wextra -m64 -DNDEBUG -O3 -DIS_64BIT -DUSE_POPCNT -flto" > ~/.R/Makevars
+  echo "LDFLAGS=-m64 -Wl,--no-as-needed -lpthread -Wall -fno-exceptions -std=c++11  -pedantic -Wextra -m64 -DNDEBUG -O3 -DIS_64BIT -DUSE_POPCNT -flto" >> ~/.R/Makevars
+elif [ ! -e "~/.R/Makevars" ]; then
+  touch ~/.R/Makevars
+  echo "CXXFLAGS= -Wall -fno-exceptions -std=c++11  -pedantic -Wextra -m64 -DNDEBUG -O3 -DIS_64BIT -DUSE_POPCNT -flto" > ~/.R/Makevars
+  echo "LDFLAGS=-m64 -Wl,--no-as-needed -lpthread -Wall -fno-exceptions -std=c++11  -pedantic -Wextra -m64 -DNDEBUG -O3 -DIS_64BIT -DUSE_POPCNT -flto" >> ~/.R/Makevars
+else
+  mv ~/.R/Makevars ~/.R/Makevars.bak_CustomConfig
+  echo "CXXFLAGS= -Wall -fno-exceptions -std=c++11  -pedantic -Wextra -m64 -DNDEBUG -O3 -DIS_64BIT -DUSE_POPCNT -flto" > ~/.R/Makevars
+  echo "LDFLAGS=-m64 -Wl,--no-as-needed -lpthread -Wall -fno-exceptions -std=c++11  -pedantic -Wextra -m64 -DNDEBUG -O3 -DIS_64BIT -DUSE_POPCNT -flto" >> ~/.R/Makevars
+fi
