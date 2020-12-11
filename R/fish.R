@@ -1,19 +1,21 @@
 
 #' Configure and start Stockfish engine
 #'
-#' @param path Path to Stockfish executable
 #' @param options A list of options passed on to Stockfish
 #'
 #' @return `TRUE` if startup is successful
 #' @export
-stockfish_configure <- function(path = system("which stockfish", TRUE), options = list()) {
+stockfish_configure <- function(options = list()) {
+
+  # Find executable
+  paths <- paste0(.libPaths(), "/chess/bin")
+  exe <- list.files(paths[dir.exists(paths)][1], full.names = TRUE)
 
   # Configure Stockfish only if necessary
   if (!is.null(chess_env$stockfish)) {
     message("Stockfish already configured")
   } else {
-    path <- path.expand(path)
-    assign("stockfish", chess_env$chess_engine$SimpleEngine$popen_uci(path), chess_env)
+    assign("stockfish", chess_env$chess_engine$SimpleEngine$popen_uci(exe), chess_env)
     if (length(options) > 0) chess_env$stockfish$configure(options)
   }
 

@@ -4,11 +4,9 @@
 \alias{stockfish_configure}
 \title{Configure and start Stockfish engine}
 \usage{
-stockfish_configure(path = system("which stockfish", TRUE), options = list())
+stockfish_configure(options = list())
 }
 \arguments{
-\item{path}{Path to Stockfish executable}
-
 \item{options}{A list of options passed on to Stockfish}
 }
 \value{
