@@ -7,4 +7,4 @@ OBJECTS = $(CPPFILES:.cpp=.o)
 .PHONY: all
 
 all:
-	$(CXX) -o stockfish $(OBJECTS) $(LDFLAGS)
+	$(CXX) -o stockfish.exe $(OBJECTS) $(LDFLAGS)

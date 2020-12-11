@@ -449,7 +449,7 @@ public:
     }
 
     void clear() {
-        memset(hashTable, 0, sizeof(hashTable));
+        // memset(hashTable, 0, sizeof(hashTable));
         wdlTable.clear();
         dtzTable.clear();
     }
