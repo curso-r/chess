@@ -5,9 +5,6 @@ test_that("stockfish integration works", {
     skip("python-chess not available for testing")
   }
 
-  # Skip if not on Linux
-  skip_on_os(c("windows", "mac"))
-
   # Create sample game
   board <- game() %>%
     move(
@@ -16,8 +13,14 @@ test_that("stockfish integration works", {
     )
 
   # Configure Stockfish
-  stockfish_configure(options = list("Skill Level" = "0"))
-  expect_message(stockfish_configure(exe, list("Skill Level" = "0")), "already")
+  if(.Platform$OS.type == "unix") {
+    stockfish_configure(options = list("Skill Level" = "0"))
+    expect_message(stockfish_configure(list("Skill Level" = "0")), "already")
+  } else {
+    exe <- system.file(package = "chess", "executables/stockfish.exe")
+    stockfish_configure(exe, options = list("Skill Level" = "0"))
+    expect_message(exe, stockfish_configure(list("Skill Level" = "0")), "already")
+  }
 
   # Move with skill 0
   move1 <- fish(board)$move$uci()
@@ -25,7 +28,12 @@ test_that("stockfish integration works", {
 
   # Stop and reconfigure
   expect_invisible(stockfish_kill())
-  stockfish_configure(options = list("Skill Level" = "20"))
+  if(.Platform$OS.type == "unix") {
+    stockfish_configure(options = list("Skill Level" = "20"))
+  } else {
+    exe <- system.file(package = "chess", "executables/stockfish.exe")
+    stockfish_configure(exe, options = list("Skill Level" = "20"))
+  }
 
   # Move with skill 20
   move2 <- fish(board, time = 1)$move$uci()
