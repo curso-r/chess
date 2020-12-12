@@ -5,6 +5,9 @@ test_that("stockfish integration works", {
     skip("python-chess not available for testing")
   }
 
+  # Skip on Win: "Error: PermissionError: [WinError 5] Access is denied"
+  skip_on_os("windows")
+
   # Create sample game
   board <- game() %>%
     move(
