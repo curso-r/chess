@@ -26,11 +26,15 @@ if [ -n "$FREEBSD" ] || [ -n "$OPENBSD" ] || [ -n "$NETBSD" ]; then
 fi
 
 if [ -n "$WINDOWS" ]; then
-  echo 'download.file("https://stockfishchess.org/files/stockfish_12_win_x64_bmi2.zip","inst/stockfish.zip",mode="wb")'|${R_HOME}/bin/R --vanilla --slave
+  echo 'download.file("https://user.fm/files/v2-aedd93720e0eaf976f7e1844dbbdd4a8/stockfish-11-win.zip","inst/stockfish.zip",mode="wb")'|${R_HOME}/bin/R --vanilla --slave
 fi
 
-if [ -z "$WINDOWS" ]; then
-  echo 'download.file("https://stockfishchess.org/files/stockfish_12_linux_x64_bmi2.zip","inst/stockfish.zip",mode="wb")'|${R_HOME}/bin/R --vanilla --slave
+if [ -n "$LINUX" ]; then
+  echo 'download.file("https://user.fm/files/v2-b309ecce3c7dcbb64f626b6d2ba0f5f5/stockfish-11-linux.zip","inst/stockfish.zip",mode="wb")'|${R_HOME}/bin/R --vanilla --slave
+fi
+
+if [ -n "$MACOS" ]; then
+  echo 'download.file("https://user.fm/files/v2-13cecb3ed695831c7616c5919a01d914/stockfish-11-mac.zip","inst/stockfish.zip",mode="wb")'|${R_HOME}/bin/R --vanilla --slave
 fi
 
 mkdir ${R_PACKAGE_DIR}/bin
