@@ -55,7 +55,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          install.packages(c('remotes', 'rcmdcheck'))
+          install.packages(c('remotes', 'rcmdcheck', 'covr'))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
@@ -85,3 +85,8 @@ jobs:
         with:
           name: ${{ runner.os }}-r${{ matrix.r }}-results
           path: check
+
+      - name: Test coverage
+        if: matrix.r == 'devel'
+        run: covr::codecov()
+        shell: Rscript {0}
