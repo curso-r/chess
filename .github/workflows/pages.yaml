@@ -4,10 +4,10 @@ on:
       - main
       - master
 
-name: pkgdown
+name: Pages
 
 jobs:
-  pkgdown:
+  Pages:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}

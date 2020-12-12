@@ -8,10 +8,10 @@ on:
       - main
       - master
 
-name: test-coverage
+name: Coverage
 
 jobs:
-  test-coverage:
+  Coverage:
     runs-on: ubuntu-16.04
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
