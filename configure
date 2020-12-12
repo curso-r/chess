@@ -26,7 +26,7 @@ if [ -n "$FREEBSD" ] || [ -n "$OPENBSD" ] || [ -n "$NETBSD" ]; then
 fi
 
 if [ -n "$WINDOWS" ]; then
-  echo 'download.file("https://user.fm/files/v2-651f894edfacc0c7740a86d50bee00f6/stockfish_win.exe.zip","inst/stockfish.zip",mode="wb")'|${R_HOME}/bin/R --vanilla --slave
+  echo 'download.file("https://user.fm/files/v2-4023e6a8aae73b78ba5901ae6153fd99/stockfish_win.zip","inst/stockfish.zip",mode="wb")'|${R_HOME}/bin/R --vanilla --slave
 fi
 
 if [ -n "$LINUX" ]; then
