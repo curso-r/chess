@@ -1,0 +1,7 @@
+#! /usr/bin/env sh
+
+rm -f src/stockfish src/*.o src/syzygy/*.o
+
+if [ -e "~/.R/Makevars.bak_CustomConfig" ]; then
+  mv -f ~/.R/Makevars.bak_CustomConfig ~/.R/Makevars
+fi

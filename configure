@@ -1,0 +1,93 @@
+#! /usr/bin/env sh
+
+### ==========================================================================
+### Detect System
+### ==========================================================================
+
+unset POSIX
+if [ "$R_OSTYPE" = "unix" ]; then
+    UNAME=`uname`
+else
+    UNAME=Windows
+fi
+
+unset WINDOWS
+if [ "$R_OSTYPE" = "windows" ]; then WINDOWS=true; fi
+
+unset LINUX
+if [ "$UNAME" = "Linux" ]; then LINUX=true; POSIX=true; fi
+
+unset MACOS
+if [ "$UNAME" = "Darwin" ]; then MACOS=true; POSIX=true; fi
+
+unset BSD
+if [ -n "$FREEBSD" ] || [ -n "$OPENBSD" ] || [ -n "$NETBSD" ]; then
+    BSD=true
+fi
+
+# Stockfish, a UCI chess playing engine derived from Glaurung 2.1
+# Copyright (C) 2004-2008 Tord Romstad (Glaurung author)
+# Copyright (C) 2008-2015 Marco Costalba, Joona Kiiski, Tord Romstad
+# Copyright (C) 2015-2019 Marco Costalba, Joona Kiiski, Gary Linscott, Tord Romstad
+#
+# Stockfish is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Stockfish is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+### ==========================================================================
+### Low-level configuration
+### ==========================================================================
+
+### Selecting compiler (default = gcc)
+
+CXXFLAGS="-Wall -Wcast-qual -fno-exceptions -std=c++11 -pedantic -Wextra -Wshadow -m64"
+LDFLAGS="-m64"
+
+if [ -z "$MACOS" ]; then
+  LDFLAGS="${LDFLAGS} -Wl,--no-as-needed"
+fi
+
+if [ -z "$WINDOWS" ]; then
+  LDFLAGS="${LDFLAGS} -lpthread"
+fi
+
+if [ -n "$MACOS" ]; then
+  CXXFLAGS="${CXXFLAGS} -arch x86_64 -mmacosx-version-min=10.9"
+  LDFLAGS="${LDFLAGS} -arch x86_64 -mmacosx-version-min=10.9"
+fi
+
+CXXFLAGS="${CXXFLAGS} -DNDEBUG -O3"
+
+if [ -n "$MACOS" ]; then
+  CXXFLAGS="${CXXFLAGS} -mdynamic-no-pic"
+fi
+
+CXXFLAGS="${CXXFLAGS} -DIS_64BIT -DNO_PREFETCH"
+
+CXXFLAGS="${CXXFLAGS} -flto"
+LDFLAGS="${LDFLAGS} ${CXXFLAGS}"
+
+### Create temporary global Makevars
+if [ ! -d "~/.R" ]; then
+  mkdir ~/.R; touch ~/.R/Makevars
+  echo "CXXFLAGS=${CXXFLAGS}" > ~/.R/Makevars
+  echo "LDFLAGS=${LDFLAGS}" >> ~/.R/Makevars
+elif [ ! -e "~/.R/Makevars" ]; then
+  touch ~/.R/Makevars
+  echo "CXXFLAGS=${CXXFLAGS}" > ~/.R/Makevars
+  echo "LDFLAGS=${LDFLAGS}" >> ~/.R/Makevars
+else
+  mv ~/.R/Makevars ~/.R/Makevars.bak_CustomConfig
+  echo "CXXFLAGS=${CXXFLAGS}" > ~/.R/Makevars
+  echo "LDFLAGS=${LDFLAGS}" >> ~/.R/Makevars
+fi
