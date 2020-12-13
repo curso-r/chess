@@ -1,0 +1,9 @@
+CPPFILES=Stockfish/benchmark.cpp Stockfish/bitbase.cpp Stockfish/bitboard.cpp Stockfish/endgame.cpp Stockfish/evaluate.cpp Stockfish/main.cpp Stockfish/material.cpp Stockfish/misc.cpp Stockfish/movegen.cpp Stockfish/movepick.cpp Stockfish/pawns.cpp Stockfish/position.cpp Stockfish/psqt.cpp Stockfish/search.cpp Stockfish/syzygy/tbprobe.cpp Stockfish/thread.cpp Stockfish/timeman.cpp Stockfish/tt.cpp Stockfish/uci.cpp Stockfish/ucioption.cpp
+SOURCES=$(CPPFILES)
+OBJECTS=$(CFILES:.c=.o) $(CPPFILES:.cpp=.o)
+PKG_LIBS=-lpthread
+
+.PHONY: all
+
+all:
+	$(CXX) -o stockfish $(OBJECTS) $(PKG_LIBS)

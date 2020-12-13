@@ -1,0 +1,5 @@
+stockfish
+*.o
+*.so
+Stockfish/*.o
+Stockfish/syzygy/*.o

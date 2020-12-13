@@ -1,0 +1,8 @@
+CPPFILES=$(wildcard Stockfish/*.cpp Stockfish/syzygy/*.cpp)
+SOURCES=$(CPPFILES)
+OBJECTS=$(CFILES:.c=.o) $(CPPFILES:.cpp=.o)
+
+.PHONY: all
+
+all:
+	$(CXX) -o stockfish $(OBJECTS)
