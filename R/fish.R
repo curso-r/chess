@@ -7,9 +7,13 @@
 #' @export
 stockfish_configure <- function(options = list()) {
 
-  # Find executable
-  paths <- paste0(.libPaths(), "/chess/bin")
-  exe <- list.files(paths[dir.exists(paths)][1], full.names = TRUE)
+  # Find executable (and handle Windows)
+  exe <- .libPaths() %>%
+    paste0("/chess/bin") %>%
+    magrittr::extract(dir.exists(.)) %>%
+    magrittr::extract(1) %>%
+    list.files(full.names = TRUE, recursive = TRUE, pattern = "stockfish($|.exe)") %>%
+    utils::tail(1)
 
   # Configure Stockfish only if necessary
   if (!is.null(chess_env$stockfish)) {
