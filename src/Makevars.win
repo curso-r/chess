@@ -1,8 +1,10 @@
-CPPFILES=$(wildcard Stockfish/*.cpp Stockfish/syzygy/*.cpp)
+CXX=g++
+CPPFILES=benchmark.cpp bitbase.cpp bitboard.cpp endgame.cpp evaluate.cpp main.cpp material.cpp misc.cpp movegen.cpp movepick.cpp pawns.cpp position.cpp psqt.cpp search.cpp tbprobe.cpp thread.cpp timeman.cpp tt.cpp uci.cpp ucioption.cpp
 SOURCES=$(CPPFILES)
 OBJECTS=$(CFILES:.c=.o) $(CPPFILES:.cpp=.o)
+PKG_LIBS=-lpthread
 
 .PHONY: all
 
 all:
-	$(CXX) -o stockfish $(OBJECTS)
+	$(CXX) $(OBJECTS) -o stockfish $(PKG_LIBS)

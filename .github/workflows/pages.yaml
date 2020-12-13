@@ -8,7 +8,7 @@ name: Pages
 
 jobs:
   Pages:
-    runs-on: macOS-latest
+    runs-on: ubuntu-16.04
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       CHESS_TEST: 1
@@ -19,37 +19,34 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
 
-      - name: Query dependencies
-        run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
-        shell: Rscript {0}
-
       - name: Cache R packages
         uses: actions/cache@v2
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+          key: ${{ runner.os }}-r-${{ matrix.r }}-lib-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-r-${{ matrix.r }}-lib-
 
-      - name: Install dependencies
+      - name: Install Linux dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get install librsvg2-dev libcurl4-openssl-dev libssl-dev libicu-dev
+
+      - name: Install R dependencies
         run: |
+          install.packages(c('remotes', 'rcmdcheck', 'covr'))
           remotes::install_deps(dependencies = TRUE)
-          install.packages("pkgdown", type = "binary")
         shell: Rscript {0}
 
       - name: Install Miniconda
         run: |
-          Rscript -e "remotes::install_github('rstudio/reticulate')"
-          Rscript -e "reticulate::install_miniconda()"
-      - if: runner.os == 'macOS'
-        run: echo "options(reticulate.conda_binary = reticulate:::miniconda_conda())" >> .Rprofile
+          install.packages('reticulate')
+          reticulate::install_miniconda()
+        shell: Rscript {0}
+
       - name: Install python-chess
         run: |
-          Rscript -e "reticulate::conda_create('r-reticulate', packages = c('python==3.8'))"
-          Rscript -e "remotes::install_local()"
-          Rscript -e "chess::install_chess()"
+          remotes::install_local()
+          chess::install_chess()
+        shell: Rscript {0}
 
       - name: Install package
         run: R CMD INSTALL .

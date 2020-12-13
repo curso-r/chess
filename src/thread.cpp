@@ -25,7 +25,7 @@
 #include "search.h"
 #include "thread.h"
 #include "uci.h"
-#include "syzygy/tbprobe.h"
+#include "tbprobe.h"
 #include "tt.h"
 
 ThreadPool Threads; // Global object
