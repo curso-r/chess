@@ -47,3 +47,12 @@ reference:
   - "board_is"
   - "board_move"
   - "board_color"
+- title: Internals
+  desc:  Internal functions
+- contents:
+  - board_to_string
+  - glyph_to_nag
+  - line
+  - move_
+  - parse_move
+  - play

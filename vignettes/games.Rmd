@@ -2,7 +2,7 @@
 title: "Included games"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{games}
+  %\VignetteIndexEntry{Included games}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
