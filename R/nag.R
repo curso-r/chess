@@ -80,9 +80,9 @@ nag <- function(game) {
   }
 }
 
-#' Convert glyph to NAG
-#' @param glyph A game node
-#' @return An integer
+# Convert glyph to NAG
+# @param glyph A game node
+# @return An integer
 glyph_to_nag <- function(glyph) {
 
   # Avoid warnings on Windows

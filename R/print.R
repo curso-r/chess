@@ -97,13 +97,13 @@ print.chess.Board <- function(x, unicode = FALSE, invert_color = FALSE,
   cat(format(board_to_string(x, unicode, invert_color, empty_square), ...))
 }
 
-#' Convert a board to either unicode or ASCII string
-#' @param x A board
-#' @param unicode Use unicode characters?
-#' @param invert_color Invert piece color? Useful for white text on dark
-#' background.
-#' @param empty_square Character used for empty square
-#' @return A string
+# Convert a board to either unicode or ASCII string
+# @param x A board
+# @param unicode Use unicode characters?
+# @param invert_color Invert piece color? Useful for white text on dark
+# background.
+# @param empty_square Character used for empty square
+# @return A string
 board_to_string <- function(x, unicode = FALSE, invert_color = FALSE,
                             empty_square = ".") {
 

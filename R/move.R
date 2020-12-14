@@ -18,11 +18,11 @@ move <- function(game, ..., notation = c("san", "uci", "xboard")) {
   return(move_(game, list(...), notation))
 }
 
-#' Make moves and create variations
-#' @param game A game node
-#' @param moves List of moves
-#' @param notation Notation used for moves
-#' @return A game node
+# Make moves and create variations
+# @param game A game node
+# @param moves List of moves
+# @param notation Notation used for moves
+# @return A game node
 move_ <- function(game, moves, notation = c("san", "uci", "xboard")) {
 
   # Base case
@@ -60,11 +60,11 @@ move_ <- function(game, moves, notation = c("san", "uci", "xboard")) {
   return(move_(game, moves, notation))
 }
 
-#' Move a piece on the board
-#' @param game A game node
-#' @param moves Vector of one or more description of moves
-#' @param notation Notation used for `moves`
-#' @return A game node
+# Move a piece on the board
+# @param game A game node
+# @param moves Vector of one or more description of moves
+# @param notation Notation used for `moves`
+# @return A game node
 play <- function(game, moves, notation = c("san", "uci", "xboard")) {
 
   # Get notation
@@ -88,11 +88,11 @@ play <- function(game, moves, notation = c("san", "uci", "xboard")) {
   return(game$add_main_variation(moves, comment = comment, nags = nag))
 }
 
-#' Branch game with next move
-#' @param game A game node
-#' @param moves Vector of one or more description of moves
-#' @param notation Notation used for `moves`
-#' @return A game node
+# Branch game with next move
+# @param game A game node
+# @param moves Vector of one or more description of moves
+# @param notation Notation used for `moves`
+# @return A game node
 line <- function(game, moves, notation = c("san", "uci", "xboard")) {
 
   # Get notation
@@ -125,11 +125,11 @@ line <- function(game, moves, notation = c("san", "uci", "xboard")) {
   return(game)
 }
 
-#' Parse move in context
-#' @param game A game node
-#' @param moves A move string
-#' @param notation Notation used for `move`
-#' @return A move object
+# Parse move in context
+# @param game A game node
+# @param moves A move string
+# @param notation Notation used for `move`
+# @return A move object
 parse_move <- function(game, moves, notation = c("san", "uci", "xboard")) {
   notation <- match.arg(notation)
   if (notation == "san") {
