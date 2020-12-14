@@ -1,9 +1,0 @@
-CXX=g++
-CPPFILES=benchmark.cpp bitbase.cpp bitboard.cpp endgame.cpp evaluate.cpp main.cpp material.cpp misc.cpp movegen.cpp movepick.cpp pawns.cpp position.cpp psqt.cpp search.cpp tbprobe.cpp thread.cpp timeman.cpp tt.cpp uci.cpp ucioption.cpp
-SOURCES=$(CPPFILES)
-OBJECTS=$(CFILES:.c=.o) $(CPPFILES:.cpp=.o)
-
-.PHONY: all
-
-all:
-	$(CXX) $(OBJECTS) -o stockfish.exe

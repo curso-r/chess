@@ -1,11 +1,6 @@
 # chess (development version)
 
 * Added `configure`, `configure.win`, `cleanup` to handle src
-* Added Stockfish src to build at install
-* Added unit tests for Stockfish functions
-* Added function to have Stockfish play a move (`fish()`)
-* Added function to stop Stockfish API (`stockfish_kill()`)
-* Added function start Stockfish API (`stockfish_configure()`)
 * Improved options for `install_chess()`
 
 # chess 1.0.1
