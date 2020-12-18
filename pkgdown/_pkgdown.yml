@@ -13,6 +13,11 @@ reference:
   - variations
   - variation
   - "%>%"
+- title: Analysis
+  desc:  Utilities for the Stockfish engine
+- contents:
+  - fish_configure
+  - fish_move
 - title: Annotations
   desc:  Utilities for adding and exporting game annotations
 - contents:
