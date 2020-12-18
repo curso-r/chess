@@ -5,12 +5,12 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/curso-r/chess/workflows/R-CMD-check/badge.svg)](https://github.com/curso-r/chess/actions)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/chess)](https://CRAN.R-project.org/package=chess)
 [![Codecov test
 coverage](https://codecov.io/gh/curso-r/chess/branch/master/graph/badge.svg)](https://codecov.io/gh/curso-r/chess?branch=master)
+[![R build
+status](https://github.com/curso-r/chess/workflows/R-CMD-check/badge.svg)](https://github.com/curso-r/chess/actions)
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 <!-- badges: end -->
@@ -222,7 +222,7 @@ interface was too clumsy…
 -   [x] Advanced usage
 -   [x] Styler
 -   [x] CRAN
--   [ ] Stockfish API
+-   [x] Stockfish API
 -   [ ] Static boards (puzzles)
 -   [ ] Shiny?
 
