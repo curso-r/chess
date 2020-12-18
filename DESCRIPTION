@@ -20,7 +20,8 @@ Imports:
     magrittr,
     purrr,
     reticulate,
-    rsvg
+    rsvg,
+    stockfish
 Suggests:
     covr,
     graphics,
