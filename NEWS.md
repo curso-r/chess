@@ -1,5 +1,6 @@
 # chess (development version)
 
+* Fixed printing issue on MacOS
 * Added `fish_move()` to have Stockfish play a move
 * Added `fish_configure()` to startup Stockfish engine
 * Added `{stockfish}` dependency
