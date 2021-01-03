@@ -37,7 +37,7 @@ print.chess.pgn.Variations <- function(x, unicode = FALSE, invert_color = FALSE,
     purrr::transpose() %>%
     purrr::map_chr(paste0, collapse = "    ") %>%
     paste0(collapse = "\n") %>%
-    cat()
+    cli::cat_line()
 }
 
 #' Print game node
@@ -80,7 +80,7 @@ print.chess.pgn.GameNode <- function(x, unicode = FALSE, invert_color = FALSE,
     x$board() %>%
       board_to_string(unicode, invert_color, empty_square) %>%
       format(...) %>%
-      cat()
+      cli::cat_line()
   }
 }
 
@@ -94,7 +94,9 @@ print.chess.pgn.GameNode <- function(x, unicode = FALSE, invert_color = FALSE,
 #' @export
 print.chess.Board <- function(x, unicode = FALSE, invert_color = FALSE,
                               empty_square = ".", ...) {
-  cat(format(board_to_string(x, unicode, invert_color, empty_square), ...))
+  cli::cat_line(
+    format(board_to_string(x, unicode, invert_color, empty_square), ...)
+  )
 }
 
 # Convert a board to either unicode or ASCII string
