@@ -3,7 +3,7 @@
 #'
 #' Install the python library used as the backbone of this package. You can
 #' pass arguments on to [reticulate::py_install()], but `python-chess` needs
-#' `python_version = "3.8"` and `pip = TRUE`.
+#' `python_version = "3.9"` and `pip = TRUE`.
 #'
 #' @param method Installation method (by default, "auto" automatically finds a
 #' method that will work in the local environment, but note that the
@@ -12,7 +12,7 @@
 #' and other conventional install locations)
 #' @param envname Name of Python environment to install within
 #' @param conda_python_version the python version installed in the created conda
-#' environment (Python 3.8 is installed by default)
+#' environment (Python 3.9 is installed by default)
 #' @param ... other arguments passed to [reticulate::conda_install()] or
 #' [reticulate::virtualenv_install()]
 #'
@@ -20,7 +20,7 @@
 #' @export
 install_chess <- function(method = c("auto", "virtualenv", "conda"),
                           conda = "auto", envname = NULL,
-                          conda_python_version = "3.8", ...) {
+                          conda_python_version = "3.9", ...) {
 
   # Install
   method <- match.arg(method)

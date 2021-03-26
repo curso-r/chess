@@ -1,5 +1,6 @@
 # chess (development version)
 
+* `install_chess()` must use Python 3.9.
 * Fixed printing issue on MacOS
 * Added `fish_move()` to have Stockfish play a move
 * Added `fish_configure()` to startup Stockfish engine
