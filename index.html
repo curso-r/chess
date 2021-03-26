@@ -29,6 +29,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -93,26 +95,26 @@
   <div class="contents col-md-9">
 <div id="chess-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#chess-" class="anchor"></a>chess <a href="https://www.curso-r.com/"><img src="reference/figures/logo.png" align="right" height="139"></a>
+<a href="#chess-" class="anchor"></a>chess <a href="https://www.curso-r.com/" class="external-link"><img src="reference/figures/logo.png" align="right" height="139"></a>
 </h1></div>
 <!-- badges: start -->
 
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p><a href="https://github.com/curso-r/chess">chess</a> is an <em>opinionated</em> wrapper for R around <a href="https://github.com/niklasf/python-chess">python-chess</a>, an amazing library created by <a href="https://github.com/niklasf">Niklas Fiekas</a>. It allows users to read and write <a href="https://en.wikipedia.org/wiki/Portable_Game_Notation">PGN</a> files as well as create and explore game trees such as the ones seen in chess books.</p>
+<p><a href="https://github.com/curso-r/chess" class="external-link">chess</a> is an <em>opinionated</em> wrapper for R around <a href="https://github.com/niklasf/python-chess" class="external-link">python-chess</a>, an amazing library created by <a href="https://github.com/niklasf" class="external-link">Niklas Fiekas</a>. It allows users to read and write <a href="https://en.wikipedia.org/wiki/Portable_Game_Notation" class="external-link">PGN</a> files as well as create and explore game trees such as the ones seen in chess books.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>Install the released version of <a href="https://github.com/curso-r/chess">chess</a> from CRAN:</p>
+<p>Install the released version of <a href="https://github.com/curso-r/chess" class="external-link">chess</a> from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"chess"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"chess"</span><span class="op">)</span></code></pre></div>
 <p>Or install the development version from GitHub with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"curso-r/chess"</span><span class="op">)</span></code></pre></div>
-<p>This should automatically install python-chess to your <a href="https://github.com/rstudio/reticulate">reticulate</a> environment, but you can also explicitly do it with a convenient function:</p>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"curso-r/chess"</span><span class="op">)</span></code></pre></div>
+<p>This should automatically install python-chess to your <a href="https://github.com/rstudio/reticulate" class="external-link">reticulate</a> environment, but you can also explicitly do it with a convenient function:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">chess</span><span class="fu">::</span><span class="fu"><a href="reference/install_chess.html">install_chess</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
@@ -121,10 +123,10 @@
 <a href="#example" class="anchor"></a>Example</h2>
 <p>To read an existing game, simply use <code><a href="reference/read_game.html">read_game()</a></code>. To explore it you can use <code><a href="reference/forward.html">forward()</a></code>/<code><a href="reference/back.html">back()</a></code>, as well as <code><a href="reference/variations.html">variations()</a></code>/<code><a href="reference/variation.html">variation()</a></code> to see all variations listed for the next move and choose one of them.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/curso-r/chess">chess</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/curso-r/chess" class="external-link">chess</a></span><span class="op">)</span>
 
 <span class="co"># Read final game from the Queen's Gambit</span>
-<span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"harmon.pgn"</span>, package <span class="op">=</span> <span class="st">"chess"</span><span class="op">)</span>
+<span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"harmon.pgn"</span>, package <span class="op">=</span> <span class="st">"chess"</span><span class="op">)</span>
 <span class="va">harmon_borgov</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_game.html">read_game</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>
 
 <span class="co"># Starting position</span>
@@ -179,17 +181,17 @@
 <span class="co">#&gt; . . . . . . . .</span>
 <span class="co">#&gt; P P . . P P P P</span>
 <span class="co">#&gt; R N B Q K B N R</span></code></pre></div>
-<p>Many other games are included with the package so you can get up and running as soon as you install <a href="https://github.com/curso-r/chess">chess</a>! See <code><a href="articles/games.html">vignette("games")</a></code> for more information.</p>
-<p>You can also create your own game with <code><a href="reference/game.html">game()</a></code> and add variations to it: the <code><a href="reference/move.html">move()</a></code> function adds moves as well as branches the tree of the game. Strings are converted to simple moves, while <code><a href="https://rdrr.io/r/base/list.html">list()</a></code>s behave exactly as parenthesis in PGN, creating a variation of the last move. Here you can see how to recreate a <a href="https://en.wikipedia.org/wiki/Scholar%27s_mate">Scholar’s mate</a> and some ways to avoid it:</p>
+<p>Many other games are included with the package so you can get up and running as soon as you install <a href="https://github.com/curso-r/chess" class="external-link">chess</a>! See <code><a href="articles/games.html">vignette("games")</a></code> for more information.</p>
+<p>You can also create your own game with <code><a href="reference/game.html">game()</a></code> and add variations to it: the <code><a href="reference/move.html">move()</a></code> function adds moves as well as branches the tree of the game. Strings are converted to simple moves, while <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code>s behave exactly as parenthesis in PGN, creating a variation of the last move. Here you can see how to recreate a <a href="https://en.wikipedia.org/wiki/Scholar%27s_mate" class="external-link">Scholar’s mate</a> and some ways to avoid it:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Scholar's mate and some defenses</span>
 <span class="va">scholars_mate</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/game.html">game</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"e4"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"e5"</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"e6"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"d5"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"e5"</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"e6"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"d5"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"Bc4"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"Nc6"</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Nf6"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"Nc6"</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"Nf6"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"Qh5"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"Nf6"</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"g6"</span>, <span class="st">"Qf3"</span>, <span class="st">"Nf6"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"Nf6"</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"g6"</span>, <span class="st">"Qf3"</span>, <span class="st">"Nf6"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="reference/move.html">move</a></span><span class="op">(</span><span class="st">"Qxf7"</span><span class="op">)</span>
 
 <span class="co"># Last mainline move</span>
@@ -204,10 +206,10 @@
 <span class="co">#&gt; P P P P . P P P</span>
 <span class="co">#&gt; R N B . K . N R</span></code></pre></div>
 <p>Note that there are many ways to structure the input to <code><a href="reference/move.html">move()</a></code>. See <code><a href="articles/chess.html">vignette("chess")</a></code> for more information.</p>
-<p><a href="https://github.com/curso-r/chess">chess</a> also features many ways of seeing both the game as a whole and the board at a specific point in time.</p>
+<p><a href="https://github.com/curso-r/chess" class="external-link">chess</a> also features many ways of seeing both the game as a whole and the board at a specific point in time.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Print with unicode (doesn't look good on GitHub)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">scholars_mate</span>, unicode <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">scholars_mate</span>, unicode <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="co">#&gt;      &lt;4. Qxf7#&gt;</span>
 <span class="co">#&gt; ♜ . ♝ ♛ ♚ ♝ . ♜</span>
 <span class="co">#&gt; ♟ ♟ ♟ ♟ . ♕ ♟ ♟</span>
@@ -223,7 +225,7 @@
 <span class="co">#&gt; [1] "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4"</span>
 
 <span class="co"># See the PGN after some move</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="fu"><a href="reference/back.html">back</a></span><span class="op">(</span><span class="va">scholars_mate</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu"><a href="reference/back.html">back</a></span><span class="op">(</span><span class="va">scholars_mate</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; 2... Nc6 3. Qh5 Nf6 ( 3... g6 4. Qf3 Nf6 ) 4. Qxf7#</span>
 
 <span class="co"># Export the PGN after some move</span>
@@ -231,15 +233,15 @@
 <span class="co">#&gt; [1] "2... Nc6 3. Qh5 Nf6 ( 3... g6 4. Qf3 Nf6 ) 4. Qxf7#"</span>
 
 <span class="co"># Plot current board</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">scholars_mate</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">scholars_mate</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="75%" style="display: block; margin: auto;"></p>
 </div>
 <div id="motivation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#motivation" class="anchor"></a>Motivation</h2>
-<p>python-chess served as the inspiration (and backbone) for <a href="https://github.com/curso-r/chess">chess</a>. While the original version (and <a href="https://github.com/jbkunst/rchess"><code>{rchess}</code></a> for that matter) broadly handles “move generation, move validation” (with powerful classes and object-oriented syntax), <a href="https://github.com/curso-r/chess">chess</a> focuses on making it easy to create and explore PGNs as trees.</p>
+<p>python-chess served as the inspiration (and backbone) for <a href="https://github.com/curso-r/chess" class="external-link">chess</a>. While the original version (and <a href="https://github.com/jbkunst/rchess" class="external-link"><code>{rchess}</code></a> for that matter) broadly handles “move generation, move validation” (with powerful classes and object-oriented syntax), <a href="https://github.com/curso-r/chess" class="external-link">chess</a> focuses on making it easy to create and explore PGNs as trees.</p>
 <p>By narrowing down the scope of the API, I believe the package becomes more intuitive to people who just want to quickly create shareable game analyses or easily explore other people’s games without having to resort to point and click software.</p>
-<p><a href="https://github.com/curso-r/chess">chess</a>’s first use was helping me study Bobby Fischer’s <em>My 60 Memorable Games</em>. After some very difficult <a href="https://github.com/curso-r/chess/blob/master/data-raw/m60mg.R">parsing</a>, I was able to convert the whole book to PGN and <a href="https://lichess.org/study/4zOTO2ki">upload it to lichess</a>, but I still felt like the interface was too clumsy…</p>
+<p><a href="https://github.com/curso-r/chess" class="external-link">chess</a>’s first use was helping me study Bobby Fischer’s <em>My 60 Memorable Games</em>. After some very difficult <a href="https://github.com/curso-r/chess/blob/master/data-raw/m60mg.R" class="external-link">parsing</a>, I was able to convert the whole book to PGN and <a href="https://lichess.org/study/4zOTO2ki" class="external-link">upload it to lichess</a>, but I still felt like the interface was too clumsy…</p>
 </div>
 <div id="roadmap" class="section level2">
 <h2 class="hasAnchor">
@@ -292,19 +294,19 @@ Shiny?</li>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the <a href="https://github.com/curso-r/chess">chess</a> project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the <a href="https://github.com/curso-r/chess" class="external-link">chess</a> project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 <div id="license" class="section level2">
 <h2 class="hasAnchor">
 <a href="#license" class="anchor"></a>License</h2>
-<p><a href="https://github.com/curso-r/chess">chess</a> is licensed under the GPL 3 (or any later version at your option). Check out <a href="https://github.com/curso-r/chess/blob/master/LICENSE.md">LICENSE.md</a> for the full text.</p>
+<p><a href="https://github.com/curso-r/chess" class="external-link">chess</a> is licensed under the GPL 3 (or any later version at your option). Check out <a href="https://github.com/curso-r/chess/blob/master/LICENSE.md" class="external-link">LICENSE.md</a> for the full text.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=chess">https://​cloud.r-project.org/​package=chess</a>
 </li>
@@ -314,46 +316,52 @@ Shiny?</li>
 </li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
 <li><small><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>C. Lente <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://CRAN.R-project.org/package=chess"><img src="https://www.r-pkg.org/badges/version/chess" alt="CRAN status"></a></li>
-<li><a href="https://codecov.io/gh/curso-r/chess?branch=master"><img src="https://codecov.io/gh/curso-r/chess/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
-<li><a href="https://github.com/curso-r/chess/actions"><img src="https://github.com/curso-r/chess/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
+<li><a href="https://CRAN.R-project.org/package=chess" class="external-link"><img src="https://www.r-pkg.org/badges/version/chess" alt="CRAN status"></a></li>
+<li><a href="https://codecov.io/gh/curso-r/chess?branch=master" class="external-link"><img src="https://codecov.io/gh/curso-r/chess/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/curso-r/chess/actions" class="external-link"><img src="https://github.com/curso-r/chess/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by C. Lente.</p>
+  <p></p>
+<p>Developed by C. Lente.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -361,6 +369,8 @@ Shiny?</li>
 
   
 
+
+  
 
   </body>
 </html>

@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -71,7 +73,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/curso-r/chess/">
+  <a href="https://github.com/curso-r/chess/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -92,35 +94,35 @@
       <h1 data-toc-skip>Included games</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/curso-r/chess/blob/master/vignettes/games.Rmd"><code>vignettes/games.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/curso-r/chess/blob/master/vignettes/games.Rmd" class="external-link"><code>vignettes/games.Rmd</code></a></small>
       <div class="hidden name"><code>games.Rmd</code></div>
 
     </div>
 
     
     
-<p><a href="https://github.com/curso-r/chess">chess</a> includes a total of 61 games so you can get up and running as soon as you install the package. To access them, use the <code><a href="https://rdrr.io/r/base/system.file.html">system.file()</a></code> function as below:</p>
+<p><a href="https://github.com/curso-r/chess" class="external-link">chess</a> includes a total of 61 games so you can get up and running as soon as you install the package. To access them, use the <code><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file()</a></code> function as below:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/curso-r/chess">chess</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/curso-r/chess" class="external-link">chess</a></span><span class="op">)</span>
 
 <span class="co"># Read final game from the Queen's Gambit</span>
-<span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"harmon.pgn"</span>, package <span class="op">=</span> <span class="st">"chess"</span><span class="op">)</span>
+<span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"harmon.pgn"</span>, package <span class="op">=</span> <span class="st">"chess"</span><span class="op">)</span>
 <span class="va">harmon_borgov</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_game.html">read_game</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>
 
 <span class="co"># PGN for game</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">harmon_borgov</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">harmon_borgov</span><span class="op">)</span></code></pre></div>
 <p>The example above loads the final game from the <em>Queen’s Gambit</em>. The other 60 games are sourced from <em>My 60 Memorable Games</em>, a classic book by Bobby Fischer, and are included in a single file. They can be loaded in the same way:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Read all games from My 60 Memorable Games</span>
-<span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"m60mg.pgn"</span>, package <span class="op">=</span> <span class="st">"chess"</span><span class="op">)</span>
+<span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"m60mg.pgn"</span>, package <span class="op">=</span> <span class="st">"chess"</span><span class="op">)</span>
 <span class="va">m60mg</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_game.html">read_game</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>
 
 <span class="co"># Check if it's a list of 60 games</span>
-<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">m60mg</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">m60mg</span><span class="op">)</span></code></pre></div>
 <p>In cases where you have more than one game in a single file, you can either load them all and access them like in a list (see below) or use the <code>n_max</code> argument to read only a handful of them.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># PGN for Fischer vs. Unzicker</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">m60mg</span><span class="op">[[</span><span class="fl">10</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">m60mg</span><span class="op">[[</span><span class="fl">10</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></code></pre></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -132,11 +134,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by C. Lente.</p>
+  <p></p>
+<p>Developed by C. Lente.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -144,6 +148,8 @@
 
   
 
+
+  
 
   </body>
 </html>
