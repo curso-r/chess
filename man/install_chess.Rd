@@ -8,7 +8,7 @@ install_chess(
   method = c("auto", "virtualenv", "conda"),
   conda = "auto",
   envname = NULL,
-  conda_python_version = "3.8",
+  conda_python_version = "3.9",
   ...
 )
 }
@@ -23,7 +23,7 @@ and other conventional install locations)}
 \item{envname}{Name of Python environment to install within}
 
 \item{conda_python_version}{the python version installed in the created conda
-environment (Python 3.8 is installed by default)}
+environment (Python 3.9 is installed by default)}
 
 \item{...}{other arguments passed to \code{\link[reticulate:conda-tools]{reticulate::conda_install()}} or
 \code{\link[reticulate:virtualenv-tools]{reticulate::virtualenv_install()}}}
@@ -34,5 +34,5 @@ environment (Python 3.8 is installed by default)}
 \description{
 Install the python library used as the backbone of this package. You can
 pass arguments on to \code{\link[reticulate:py_install]{reticulate::py_install()}}, but \code{python-chess} needs
-\code{python_version = "3.8"} and \code{pip = TRUE}.
+\code{python_version = "3.9"} and \code{pip = TRUE}.
 }
